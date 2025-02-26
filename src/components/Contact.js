@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FaTwitter, FaDiscord, FaGithub } from 'react-icons/fa';
+import { FaTwitter, FaDiscord, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 export default function Contact() {
   return (
@@ -12,7 +12,19 @@ export default function Contact() {
         <Link 
           href="https://github.com/nocturnal625" 
           target="_blank"
-          className="hover:underline"
+          className="animated-link"
+        >
+          nocturnal625
+        </Link>
+      </div>
+
+      {/* LinkedIn */}
+      <div className="flex items-center gap-2 dark:text-gray-300">
+        <FaLinkedin className="h-5 w-5 text-blue-600" />
+        <Link 
+          href="" 
+          target="_blank"
+          className="animated-link"
         >
           nocturnal625
         </Link>
@@ -24,7 +36,7 @@ export default function Contact() {
         <Link 
           href="https://twitter.com/nocturnal625" 
           target="_blank"
-          className="hover:underline"
+          className="animated-link"
         >
           @nocturnal625
         </Link>

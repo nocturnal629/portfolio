@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         <ScrollProgress />
         <FloatingElements />
         {/* Sidebar with Contact */}
-        <aside className="w-80 min-h-screen p-6 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-slate-800 dark:to-slate-900 border-r dark:border-slate-700 relative">
+        <aside className="w-60 min-h-screen p-6 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-slate-800 dark:to-slate-900 border-r dark:border-slate-700 relative">
           {/* Add Theme Toggle at top-right of sidebar */}
           <div className="absolute top-4 right-4">
             <ThemeToggle />
