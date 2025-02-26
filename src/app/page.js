@@ -7,17 +7,22 @@ export default function Home() {
   return (
     <main className="container mx-auto p-4">
       {/* Hero Section */}
-      <section className="text-center mb-12">
-        <div className="w-32 h-32 mx-auto mb-4 relative">
-          <Image 
-            src="/images/profile.jpg"
-            alt="nocturnal625"
-            fill
-            className="rounded-full object-cover border-4 border-white shadow-lg"
-          />
+      <section className="mb-16">
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+          <div className="w-40 h-40 relative">
+            <Image 
+              src="/images/profile.jpg"
+              alt="nocturnal625"
+              fill
+              className="rounded-full object-cover border-4 border-white shadow-lg"
+            />
+          </div>
+          <div className="text-center md:text-left">
+            <h1 className="text-4xl font-bold mb-2">nocturnal625</h1>
+            <p className="text-xl text-gray-600 dark:text-gray-400 mb-4">Software Developer & Automation Engineer</p>
+            <p className="max-w-xl">Specializing in web3, blockchain solutions, and automation for gaming communities. Building meaningful digital experiences with Next.js and Python.</p>
+          </div>
         </div>
-        <h1 className="text-4xl font-bold mb-2">nocturnal625</h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400">Software Developer & Automation Engineer</p>
       </section>
 
       {/* Projects Section */}
@@ -39,34 +44,56 @@ export default function Home() {
       {/* Skills Section */}
       <section className="mb-12">
         <SectionTitle>Skills</SectionTitle>
-        <div className="flex flex-wrap gap-2">
-          {/* Languages */}
-          <span className="skill-badge">Python</span>
-          <span className="skill-badge">JavaScript</span>
-          <span className="skill-badge">GraphQL</span>
+        
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-lg font-medium mb-2 text-teal-600 dark:text-teal-400">Languages</h3>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1.5 rounded-full text-sm bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200">Python</span>
+              <span className="px-3 py-1.5 rounded-full text-sm bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200">JavaScript</span>
+              <span className="px-3 py-1.5 rounded-full text-sm bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200">GraphQL</span>
+            </div>
+          </div>
 
-          {/* Frontend */}
-          <span className="skill-badge">Next.js</span>
-          <span className="skill-badge">Tailwind CSS</span>
-          <span className="skill-badge">React</span>
+          <div>
+            <h3 className="text-lg font-medium mb-2 text-teal-600 dark:text-teal-400">Frontend</h3>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1.5 rounded-full text-sm bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200">Next.js</span>
+              <span className="px-3 py-1.5 rounded-full text-sm bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200">Tailwind CSS</span>
+              <span className="px-3 py-1.5 rounded-full text-sm bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200">React</span>
+            </div>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-medium mb-2 text-teal-600 dark:text-teal-400">Backend/Tools</h3>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1.5 rounded-full text-sm bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200">Node.js</span>
+              <span className="px-3 py-1.5 rounded-full text-sm bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200">REST APIs</span>
+              <span className="px-3 py-1.5 rounded-full text-sm bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200">MongoDB</span>
+              <span className="px-3 py-1.5 rounded-full text-sm bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200">Docker</span>
+              <span className="px-3 py-1.5 rounded-full text-sm bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200">Linux</span>
+            </div>
+          </div>
 
-          {/* Backend/Tools */}
-          <span className="skill-badge">Node.js</span>
-          <span className="skill-badge">REST APIs</span>
-          <span className="skill-badge">MongoDB</span>
-          <span className="skill-badge">Docker</span>
-          <span className="skill-badge">Linux</span>
+          <div>
+            <h3 className="text-lg font-medium mb-2 text-teal-600 dark:text-teal-400">Web3</h3>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1.5 rounded-full text-sm bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200">Web3.js</span>
+              <span className="px-3 py-1.5 rounded-full text-sm bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200">Ether.js</span>
+              <span className="px-3 py-1.5 rounded-full text-sm bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200">Smart Contracts/Solidity</span>
+              <span className="px-3 py-1.5 rounded-full text-sm bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200">RPC</span>
+            </div>
+          </div>
 
-          {/* Web3 */}
-          <span className="skill-badge">Web3.js</span>
-          <span className="skill-badge">Ether.js</span>
-          <span className="skill-badge">Smart Contracts</span>
-
-          {/* Platforms */}
-          <span className="skill-badge">Jira</span>
-          <span className="skill-badge">Superset</span>
-          <span className="skill-badge">Vercel</span>
-          <span className="skill-badge">GitHub Actions</span>
+          <div>
+            <h3 className="text-lg font-medium mb-2 text-teal-600 dark:text-teal-400">Platforms</h3>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1.5 rounded-full text-sm bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200">Jira</span>
+              <span className="px-3 py-1.5 rounded-full text-sm bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200">Superset</span>
+              <span className="px-3 py-1.5 rounded-full text-sm bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200">Vercel</span>
+              <span className="px-3 py-1.5 rounded-full text-sm bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200">Retool</span>
+            </div>
+          </div>
         </div>
       </section>
     </main>
