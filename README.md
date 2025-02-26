@@ -1,4 +1,3 @@
-# nocturnal625 - Resume Website
+# nocturnal625 - Portfolio Website
 
-**[▶ Live Demo](https://nocturnal625-dev.app)**  
-**[📄 PDF Resume](/public/resume.pdf)**
+**[▶ Live Demo](https://portfolio-nocturnal625-projects.vercel.app/)**
