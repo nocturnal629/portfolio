@@ -25,7 +25,45 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-xl mb-4">Software Developer & Automation Engineer</p>
+            <p className="mb-4">Metropolitan Manila, Philippines</p>
             <p className="max-w-xl">Specializing in web3, blockchain solutions, and automation for gaming communities. Building meaningful digital experiences with Next.js and Python.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Work Experience Section */}
+      <section className="mb-12">
+        <SectionTitle>Work Experience</SectionTitle>
+        
+        <div className="space-y-8">
+          {/* Axie Infinity - Software Developer */}
+          <div className="p-6 border rounded-lg shadow-sm bg-white hover:shadow-md transition-shadow
+                      dark:bg-slate-800 dark:border-slate-700">
+            <div className="flex flex-col md:flex-row md:justify-between mb-2">
+              <h3 className="text-xl font-semibold dark:text-white">Software Developer</h3>
+              <div className="text-teal-600 dark:text-teal-400 font-medium">Oct 2022 - Present</div>
+            </div>
+            <div className="text-lg mb-3 dark:text-gray-300">Axie Infinity Limited</div>
+            <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300">
+              <li>Built internal tools with Retool/Jira/Google Sheet/Discord Bot</li>
+              <li>Automated Discord community engagement for 200K+ users via Python bots</li>
+              <li>Provided API/GraphQL support for team/developers and community members</li>
+            </ul>
+          </div>
+          
+          {/* Axie Infinity - Technical Support */}
+          <div className="p-6 border rounded-lg shadow-sm bg-white hover:shadow-md transition-shadow
+                      dark:bg-slate-800 dark:border-slate-700">
+            <div className="flex flex-col md:flex-row md:justify-between mb-2">
+              <h3 className="text-xl font-semibold dark:text-white">Technical and Game Support</h3>
+              <div className="text-teal-600 dark:text-teal-400 font-medium">Aug 2021 - Oct 2022</div>
+            </div>
+            <div className="text-lg mb-3 dark:text-gray-300">Axie Infinity Limited</div>
+            <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300">
+              <li>Provided support to 30K+ players via Discord and Zendesk tickets</li>
+              <li>Monitored and moderated Discord channels and servers, resolving technical issues</li>
+              <li>Created and maintained a knowledge base for player issues and game guides</li>
+            </ul>
           </div>
         </div>
       </section>
