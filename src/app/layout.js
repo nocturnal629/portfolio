@@ -4,6 +4,8 @@ import Contact from '@/components/Contact';
 import { Analytics } from "@vercel/analytics/react"
 import ScrollProgress from '@/components/ScrollProgress';
 import FloatingElements from '@/components/FloatingElements';
+import KeyboardHint from '@/components/KeyboardHint';
+import SecretGamingProfiles from '@/components/SecretGamingProfiles';
 
 export const metadata = {
   title: 'nocturnal625 - Resume',
@@ -16,6 +18,8 @@ export default function RootLayout({ children }) {
       <body className="flex">
         <ScrollProgress />
         <FloatingElements />
+        <SecretGamingProfiles />
+        <KeyboardHint />
         {/* Sidebar with Contact */}
         <aside className="w-60 min-h-screen p-6 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-slate-800 dark:to-slate-900 border-r dark:border-slate-700 relative">
           {/* Add Theme Toggle at top-right of sidebar */}

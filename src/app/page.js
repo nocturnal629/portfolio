@@ -18,8 +18,13 @@ export default function Home() {
             />
           </div>
           <div className="text-center md:text-left">
-            <h1 className="text-4xl font-bold mb-2">nocturnal625</h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400 mb-4">Software Developer & Automation Engineer</p>
+            <h1 className="text-4xl font-bold mb-2 group relative">
+              nocturnal625
+              <span className="absolute opacity-0 group-hover:opacity-25 transition-opacity duration-800 delay-1000 text-xs bottom-0 right-0 text-teal-600 dark:text-teal-400">
+                [type: nocturnal625]
+              </span>
+            </h1>
+            <p className="text-xl mb-4">Software Developer & Automation Engineer</p>
             <p className="max-w-xl">Specializing in web3, blockchain solutions, and automation for gaming communities. Building meaningful digital experiences with Next.js and Python.</p>
           </div>
         </div>
