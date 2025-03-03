@@ -6,16 +6,16 @@ export const projects = [
       link: "https://github.com/nocturnal625/ronin-wallet-tracker"
     },
     {
-      title: "Sabong Saga Sales Tracker",
+      title: "Sabong Saga Genesis Sales Tracker",
       description: "Tracks Genesis NFT sales on Mavis Market, posts updates to Discord channel",
-      tech: ["Python", "Web Scraping", "AWS Lambda"],
-      link:"https://github.com/nocturnal625/Sabungan-sales"
+      tech: ["Python", "GraphQL", "Discord Webhooks"],
+      link:"https://github.com/nocturnal625/sabong-saga-genesis-sales"
     },
     {
-      title: "Sabong Saga Listings Tracker",
+      title: "Sabong Saga Genesis Listings Tracker",
       description: "Monitors NFT listings on Mavis Market, posts updates to Discord channel",
-      tech: ["Python", "Selenium", "Discord.py"],
-      link: "https://github.com/nocturnal625/Sabungan-listings"
+      tech: ["Python", "GraphQL", "Discord Webhooks"],
+      link: "https://github.com/nocturnal625/sabong-saga-genesis-listings"
     },
     {
       title: "Sabong Saga Crypto Token & ERC20 Dashboard",
@@ -26,7 +26,7 @@ export const projects = [
     {
       title: "Sierra Weather Bot",
       description: "PH-timezone Discord weather alerts with command support",
-      tech: ["Python", "OpenWeatherMap API", "Linux Cron"],
+      tech: ["Python", "NASA EONET API", "Matplotlib", "Basemap", "NumPy"],
       link: "https://github.com/nocturnal625/Sierra"
     },
     {
@@ -34,5 +34,17 @@ export const projects = [
       description: "Multi-currency crypto price tracker for Discord",
       tech: ["Python", "CoinGecko API", "Discord.py"],
       link: "https://github.com/nocturnal625/discord-crypto-price-bot"
+    },
+    {
+      title: "Wild Forest NFT Sales Tracker",
+      description: "Tracks sales data for the Wild Forest NFT Trading Contest, monitoring raffle entries and weekly prize winners.",
+      tech: ["Python", "GraphQL", "Discord.py", "FastAPI", "Uvicorn"],
+      link: "https://github.com/nocturnal625/wild-forest-nft-sales-tracker"
+    },
+    {
+      title: "Sabong Saga Legacy Mint Tracker",
+      description: "Tracks sales data for the Wild Forest NFT Trading Contest, monitoring raffle entries and weekly prize winners.",
+      tech: ["Python", "GraphQL", "Discord Webhooks"],
+      link: "https://github.com/nocturnal625/sabong-saga-legacy-mint-tracker"
     }
   ];
