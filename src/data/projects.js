@@ -46,5 +46,11 @@ export const projects = [
       description: "Tracks sales data for the Wild Forest NFT Trading Contest, monitoring raffle entries and weekly prize winners.",
       tech: ["Python", "GraphQL", "Discord Webhooks"],
       link: "https://github.com/nocturnal625/sabong-saga-legacy-mint-tracker"
+    },
+    {
+      title: "Delubyo",
+      description: "Interactive text-based survival game set during a Philippine typhoon. Players make critical choices as they navigate through an immersive messaging interface.",
+      tech: ["TypeScript", "HTML/CSS", "Vercel"],
+      link: "https://github.com/nocturnal625/delubyo"
     }
   ];
