@@ -23,8 +23,8 @@ const ThemeToggle: React.FC = () => {
 
   if (!isMounted) {
     return (
-      <button className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors">
-        <div className="w-5 h-5" />
+      <button className="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-slate-700">
+        <div className="w-4 h-4" />
       </button>
     );
   }
@@ -32,13 +32,13 @@ const ThemeToggle: React.FC = () => {
   return (
     <button 
       onClick={toggleTheme}
-      className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors"
+      className="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-slate-700"
       aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
     >
       {darkMode ? (
-        <Sun className="w-5 h-5 text-yellow-400" />
+        <Sun className="w-4 h-4 text-yellow-400" />
       ) : (
-        <Moon className="w-5 h-5 text-gray-600" />
+        <Moon className="w-4 h-4 text-gray-600" />
       )}
     </button>
   );

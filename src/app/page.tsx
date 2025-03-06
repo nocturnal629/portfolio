@@ -10,8 +10,11 @@ import Footer from '@/components/sections/Footer';
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('home');
+  const [isMounted, setIsMounted] = useState(false);
   
   useEffect(() => {
+    setIsMounted(true);
+    
     const handleScroll = () => {
       const sections = ['home', 'projects', 'experience', 'about'];
       
@@ -37,9 +40,9 @@ export default function Home() {
   };
   
   return (
-    <div className="flex flex-col min-h-screen">
-      <div className="fixed top-4 right-4 z-10">
-        <ThemeToggle />
+    <div className="flex flex-col min-h-screen overflow-hidden">
+      <div className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center">
+        {isMounted && <ThemeToggle />}
       </div>
       
       <Hero activeSection={activeSection} onSectionChange={scrollToSection} />

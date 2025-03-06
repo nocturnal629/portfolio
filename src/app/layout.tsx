@@ -8,8 +8,9 @@ import SecretGamingProfiles from '@/components/features/SecretGamingProfiles';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'nocturnal625 - Software Developer',
+  title: 'nocturnal625',
   description: 'Software Developer & Automation Engineer specializing in web3 and gaming communities.',
+  viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0',
 };
 
 export default function RootLayout({
@@ -20,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-      <script dangerouslySetInnerHTML={{
+        <script dangerouslySetInnerHTML={{
           __html: `
             (function() {
               if (localStorage.getItem('theme') === 'dark' || 
@@ -33,18 +34,16 @@ export default function RootLayout({
           `
         }} />
       </head>
-
-      <body>
+      <body className="overflow-x-hidden">
         <ScrollProgress />
         <FloatingElements />
         <SecretGamingProfiles />
         <KeyboardHint />
         
-        <main>
+        <main className="overflow-x-hidden relative w-full">
           {children}
           <Analytics />
         </main>
-
       </body>
     </html>
   );
