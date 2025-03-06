@@ -1,13 +1,13 @@
 'use client';
 import { useEffect } from 'react';
 
-export default function FloatingElements() {
+const FloatingElements: React.FC = () => {
   useEffect(() => {
     const container = document.createElement('div');
     container.className = 'fixed inset-0 pointer-events-none z-0 overflow-hidden';
     document.body.appendChild(container);
     
-    const createShapes = (isDarkMode) => {
+    const createShapes = (isDarkMode: boolean) => {
       container.innerHTML = '';
       
       for (let i = 0; i < 20; i++) {
@@ -28,7 +28,7 @@ export default function FloatingElements() {
         
         const shapeType = Math.floor(Math.random() * 6);
         
-        element.setAttribute('data-floating-element', true);
+        element.setAttribute('data-floating-element', 'true');
         element.style.position = 'absolute';
         element.style.left = `${posX}%`;
         element.style.top = `${posY}%`;
@@ -134,4 +134,6 @@ export default function FloatingElements() {
   }, []);
   
   return null;
-}
+};
+
+export default FloatingElements;

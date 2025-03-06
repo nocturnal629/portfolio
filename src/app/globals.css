@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom Base Styles */
 :root {
   --background-light: #f8fafc;
   --foreground-light: #1e293b;
@@ -30,47 +29,10 @@ body {
   background-size: 25px 25px;
 }
 
-/* Project Card */
-.project-card {
-  padding: 1.5rem;
-  background-color: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.75rem;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-}
-
-.project-card:hover {
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-}
-
-/* Skill Badges */
-.skill-badge {
-  display: inline-block;
-  padding: 0.375rem 0.75rem;
-  background-color: #dbeafe;
-  color: #1d4ed8;
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-/* Smooth transitions for theme changes */
 * {
   transition: background-color 0.1s ease, color 0.1s ease, border-color 0.1s ease, box-shadow 0.1s ease;
 }
 
-/* Improved project card hover animation */
-.project-card {
-  transform: translateY(0);
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-}
-
-/* Custom scrollbar for a more polished look */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -92,27 +54,12 @@ body {
   background: #64748b;
 }
 
-/* Custom link underline animation */
-a.animated-link {
-  position: relative;
-  text-decoration: none;
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.025em;
 }
 
-a.animated-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: #14b8a6; /* Teal color */
-  transition: width 0.2s ease;
-}
-
-a.animated-link:hover::after {
-  width: 100%;
-}
-
-.dark a.animated-link::after {
-  background-color: #2dd4bf; /* Lighter teal for dark mode */
+@media (hover: hover) {
+  .hover\:scale-102:hover {
+    transform: scale(1.02);
+  }
 }

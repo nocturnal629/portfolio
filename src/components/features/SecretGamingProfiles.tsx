@@ -1,14 +1,21 @@
 'use client';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaSteam, FaPlaystation, FaTrain, FaUserSecret } from 'react-icons/fa';
 import { SiRiotgames, SiRoblox, SiLeagueoflegends } from 'react-icons/si';
 import { GiSwordBrandish } from 'react-icons/gi';
 
-export default function SecretGamingProfiles() {
+interface GamingProfile {
+  platform: string;
+  id: string;
+  icon: React.ReactNode;
+  color: string;
+}
+
+function SecretGamingProfiles(): React.ReactNode {
   const [isVisible, setIsVisible] = useState(false);
   const [keySequence, setKeySequence] = useState('');
   
-  const gamingProfiles = [
+  const gamingProfiles: GamingProfile[] = [
     { 
       platform: 'Steam', 
       id: 'nocturnal625 (140021211)', 
@@ -16,10 +23,10 @@ export default function SecretGamingProfiles() {
       color: 'bg-blue-100 dark:bg-blue-900'
     },
     { 
-        platform: 'PlayStation Network', 
-        id: 'nocturnal625', 
-        icon: <FaPlaystation className="h-6 w-6 text-indigo-600" />,
-        color: 'bg-indigo-100 dark:bg-indigo-900'
+      platform: 'PlayStation Network', 
+      id: 'nocturnal625', 
+      icon: <FaPlaystation className="h-6 w-6 text-indigo-600" />,
+      color: 'bg-indigo-100 dark:bg-indigo-900'
     },
     { 
       platform: 'Valorant', 
@@ -60,7 +67,7 @@ export default function SecretGamingProfiles() {
   ];
   
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       const newSequence = keySequence + e.key.toLowerCase();
       
       const trimmedSequence = newSequence.slice(-20);
@@ -123,4 +130,6 @@ export default function SecretGamingProfiles() {
       </div>
     </div>
   );
-}
+};
+
+export default SecretGamingProfiles;

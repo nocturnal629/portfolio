@@ -1,7 +1,8 @@
 'use client';
+import React from 'react';
 import { useState, useEffect } from 'react';
 
-export default function ScrollProgress() {
+const ScrollProgress: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   
   useEffect(() => {
@@ -25,4 +26,6 @@ export default function ScrollProgress() {
       />
     </div>
   );
-}
+};
+
+export default ScrollProgress;
