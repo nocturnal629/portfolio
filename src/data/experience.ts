@@ -4,7 +4,7 @@ export const experiences: Experience[] = [
   {
     title: "Software Developer",
     company: "Axie Infinity Limited",
-    period: "Oct 2022 - Present",
+    period: "Oct 2022 - Oct 2024",
     responsibilities: [
       "Built internal tools with Retool/Jira/Google Sheet/Discord Bot",
       "Automated Discord community engagement for 200K+ users via Python bots",
