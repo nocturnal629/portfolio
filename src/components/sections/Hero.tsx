@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaTwitter, FaDiscord } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaDiscord, FaEnvelope } from 'react-icons/fa';
 import { NavItem } from '@/types';
 
 interface HeroProps {
@@ -63,6 +63,14 @@ const Hero: React.FC<HeroProps> = ({ activeSection, onSectionChange }) => {
           >
             <FaDiscord className="h-8 w-8" />
             <span className="sr-only">Discord</span>
+          </Link>
+          <Link 
+            href="mailto:contact@nocturnal625.dev" 
+            rel="noopener noreferrer"
+            className="text-red-600 hover:text-teal-600 dark:text-red-400 dark:hover:text-teal-400 transition-colors"
+          >
+            <FaEnvelope className="h-8 w-8" />
+            <span className="sr-only">Email</span>
           </Link>
         </div>
         

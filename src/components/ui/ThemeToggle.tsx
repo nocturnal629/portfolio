@@ -14,16 +14,21 @@ const ThemeToggle: React.FC = () => {
   }, []);
 
   const toggleTheme = () => {
-    document.documentElement.classList.toggle('dark');
-    localStorage.setItem('theme', 
-      document.documentElement.classList.contains('dark') ? 'dark' : 'light'
-    );
-    setDarkMode(!darkMode);
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    
+    if (newMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
   };
 
   if (!isMounted) {
     return (
-      <button className="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-slate-700">
+      <button className="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100">
         <div className="w-4 h-4" />
       </button>
     );
@@ -32,7 +37,7 @@ const ThemeToggle: React.FC = () => {
   return (
     <button 
       onClick={toggleTheme}
-      className="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-slate-700"
+      className={`w-8 h-8 flex items-center justify-center rounded-lg ${darkMode ? 'bg-slate-700' : 'bg-gray-100'}`}
       aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
     >
       {darkMode ? (

@@ -4,13 +4,24 @@ import { Analytics } from "@vercel/analytics/react";
 import ScrollProgress from '@/components/features/ScrollProgress';
 import FloatingElements from '@/components/features/FloatingElements';
 import KeyboardHint from '@/components/features/KeyboardHint';
+import ThemeProvider from '@/components/features/ThemeProvider';
 import SecretGamingProfiles from '@/components/features/SecretGamingProfiles';
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1.0,
+  maximumScale: 1.0,
+};
 
 export const metadata: Metadata = {
   title: 'nocturnal625',
-  description: 'Software Developer & Automation Engineer specializing in web3 and gaming communities.',
-  viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0',
+  description: 'Software Developer & Automation Engineer specializing in web3, Python automation, and gaming communities.',
+  icons: {
+    icon: '/images/favicon.png',
+    shortcut: '/images/favicon.png',
+    apple: '/images/favicon.png',
+  }
 };
 
 export default function RootLayout({
@@ -20,21 +31,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            (function() {
-              if (localStorage.getItem('theme') === 'dark' || 
-                  (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.documentElement.classList.add('dark');
-              } else {
-                document.documentElement.classList.remove('dark');
-              }
-            })();
-          `
-        }} />
-      </head>
       <body className="overflow-x-hidden">
+        <ThemeProvider />
+        
         <ScrollProgress />
         <FloatingElements />
         <SecretGamingProfiles />
