@@ -48,5 +48,11 @@ export const projects: Project[] = [
     description: "Interactive text-based survival game set during a Philippine typhoon",
     tech: ["TypeScript", "HTML/CSS", "Vercel"],
     link: "https://github.com/nocturnal625/delubyo"
+  },
+  {
+    title: "Wild Forest Lords Staking Dashboard",
+    description: "Dashboard to track and visualize staking statistics for Wild Forest Lords",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "GraphQL", "Redis", "Vercel"],
+    link: "https://github.com/nocturnal625/wild-forest-lords-staking-dashboard"
   }
 ];
