@@ -14,16 +14,21 @@ const ThemeToggle: React.FC = () => {
   }, []);
 
   const toggleTheme = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
+    if (!isMounted) return;
     
-    if (newMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
+    const newMode = !darkMode;
+
+    setDarkMode(newMode);
+
+    setTimeout(() => {
+      if (newMode) {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      }
+    }, 0);
   };
 
   if (!isMounted) {
