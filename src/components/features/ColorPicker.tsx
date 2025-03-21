@@ -1,15 +1,15 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 
 const ColorPicker: React.FC = () => {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const pickerRef = useRef<HTMLDivElement>(null);
   
   const [isOpen, setIsOpen] = useState(false);
   const [selectedColor, setSelectedColor] = useState('#14b8a6');
+  const [mounted, setMounted] = useState(false);
   
   const colorOptions = [
     { name: 'Default Teal', value: '#14b8a6' },
@@ -23,11 +23,15 @@ const ColorPicker: React.FC = () => {
   ];
 
   useEffect(() => {
-    const color = searchParams.get('color');
-    if (color) {
-      setSelectedColor(`#${color}`);
+    setMounted(true);
+    
+    if (mounted) {
+      const color = searchParams?.get('color');
+      if (color) {
+        setSelectedColor(`#${color}`);
+      }
     }
-  }, [searchParams]);
+  }, [searchParams, mounted]);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -36,27 +40,29 @@ const ColorPicker: React.FC = () => {
       }
     }
     
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
+    if (mounted) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }
+  }, [mounted]);
 
   const applyColor = (color: string) => {
     const hexValue = color.replace('#', '');
 
-    const params = new URLSearchParams(searchParams.toString());
+    const newParams = new URLSearchParams(searchParams?.toString() || '');
     
     if (color === '#14b8a6') {
-      params.delete('color');
+      newParams.delete('color');
     } else {
-      params.set('color', hexValue);
+      newParams.set('color', hexValue);
     }
 
-    const newUrl = `${window.location.pathname}${params.toString() ? '?' + params.toString() : ''}`;
+    const newUrl = `${window.location.pathname}${newParams.toString() ? '?' + newParams.toString() : ''}`;
 
     window.history.replaceState({}, '', newUrl);
-
+    
     if (color === '#14b8a6') {
       document.documentElement.classList.remove('has-theme');
       document.documentElement.style.removeProperty('--theme-color');
@@ -75,9 +81,13 @@ const ColorPicker: React.FC = () => {
     const color = hexColor.startsWith('#') ? hexColor : `#${hexColor}`;
 
     const hex = color.replace('#', '');
-    const r = parseInt(hex.substring(0, 2), 16);
-    const g = parseInt(hex.substring(2, 4), 16);
-    const b = parseInt(hex.substring(4, 6), 16);
+    const fullHex = hex.length === 3 
+      ? hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2]
+      : hex;
+    
+    const r = parseInt(fullHex.substring(0, 2), 16);
+    const g = parseInt(fullHex.substring(2, 4), 16);
+    const b = parseInt(fullHex.substring(4, 6), 16);
 
     const darkerColor = `rgb(${Math.max(0, r-40)}, ${Math.max(0, g-40)}, ${Math.max(0, b-40)})`;
     const lighterColor = `rgb(${Math.min(255, r+40)}, ${Math.min(255, g+40)}, ${Math.min(255, b+40)})`;
@@ -92,6 +102,8 @@ const ColorPicker: React.FC = () => {
   const togglePicker = () => {
     setIsOpen(!isOpen);
   };
+
+  if (!mounted) return null;
 
   return (
     <div className="fixed bottom-4 left-4 z-40" ref={pickerRef}>

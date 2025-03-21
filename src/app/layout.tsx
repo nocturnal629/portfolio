@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import './globals.css';
 import { Analytics } from "@vercel/analytics/react";
 import ScrollProgress from '@/components/features/ScrollProgress';
@@ -18,7 +18,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'nocturnal625',
-  description: 'Software Developer & Automation Engineer',
+  description: 'Software Developer & Automation Engineer specializing in web3, Python automation, and gaming communities.',
   icons: {
     icon: '/images/favicon.png',
     shortcut: '/images/favicon.png',
@@ -35,13 +35,17 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className="overflow-x-hidden">
         <ThemeProvider />
-        <ColorThemeProvider />
+        <Suspense fallback={null}>
+          <ColorThemeProvider />
+        </Suspense>
         
         <ScrollProgress />
         <FloatingElements />
         <SecretGamingProfiles />
         <KeyboardHint />
-        <ColorPicker />
+        <Suspense fallback={null}>
+          <ColorPicker />
+        </Suspense>
         
         <main className="overflow-x-hidden relative w-full">
           {children}

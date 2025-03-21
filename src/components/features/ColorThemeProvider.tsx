@@ -53,15 +53,17 @@ export default function ColorThemeProvider() {
       document.documentElement.style.removeProperty('--theme-color-rgb');
       document.documentElement.classList.remove('has-theme');
     }
-    
-    const color = searchParams.get('color');
-    
-    if (color && isValidHexColor(color)) {
-      applyColorTheme(color);
-    } else {
-      resetColorTheme();
+
+    if (mounted) {
+      const color = searchParams?.get('color');
+      
+      if (color && isValidHexColor(color)) {
+        applyColorTheme(color);
+      } else {
+        resetColorTheme();
+      }
     }
-  }, [searchParams]);
-  
+  }, [searchParams, mounted]);
+
   return null;
 }
