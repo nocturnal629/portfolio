@@ -1,14 +1,46 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const FloatingElements: React.FC = () => {
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
+    setMounted(true);
+    
     const container = document.createElement('div');
     container.className = 'fixed inset-0 pointer-events-none z-0 overflow-hidden';
     document.body.appendChild(container);
+
+    const getThemeColors = () => {
+      const hasCustomTheme = document.documentElement.classList.contains('has-theme');
+      const isDarkMode = document.documentElement.classList.contains('dark');
+      
+      if (hasCustomTheme) {
+        const themeColorRgb = getComputedStyle(document.documentElement)
+          .getPropertyValue('--theme-color-rgb')
+          .trim();
+        
+        if (themeColorRgb) {
+          const [r, g, b] = themeColorRgb.split(',').map(val => parseInt(val.trim(), 10));
+          
+          return {
+            light: `rgba(${r}, ${g}, ${b}`,
+            dark: `rgba(${r}, ${g}, ${b}`
+          };
+        }
+      }
+
+      return {
+        light: 'rgba(15, 118, 110',
+        dark: 'rgba(45, 212, 191'
+      };
+    };
     
-    const createShapes = (isDarkMode: boolean) => {
+    const createShapes = () => {
       container.innerHTML = '';
+      
+      const isDarkMode = document.documentElement.classList.contains('dark');
+      const colors = getThemeColors();
       
       for (let i = 0; i < 20; i++) {
         const element = document.createElement('div');
@@ -21,10 +53,10 @@ const FloatingElements: React.FC = () => {
         const duration = Math.floor(Math.random() * 25) + 15;
         
         const opacity = (Math.random() * 0.15) + 0.1;
-        
+
         const color = isDarkMode 
-          ? `rgba(45, 212, 191, ${opacity})`
-          : `rgba(15, 118, 110, ${opacity})`;
+          ? `${colors.dark}, ${opacity})`
+          : `${colors.light}, ${opacity})`;
         
         const shapeType = Math.floor(Math.random() * 6);
         
@@ -111,27 +143,35 @@ const FloatingElements: React.FC = () => {
       }
     `;
     document.head.appendChild(style);
-    
-    const isDarkMode = document.documentElement.classList.contains('dark');
-    createShapes(isDarkMode);
-    
-    const observer = new MutationObserver((mutations) => {
+
+    createShapes();
+
+    const classObserver = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.attributeName === 'class') {
-          const isDarkMode = document.documentElement.classList.contains('dark');
-          createShapes(isDarkMode);
+          createShapes();
+        }
+      });
+    });
+
+    const styleObserver = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'style') {
+          createShapes();
         }
       });
     });
     
-    observer.observe(document.documentElement, { attributes: true });
+    classObserver.observe(document.documentElement, { attributes: true });
+    styleObserver.observe(document.documentElement, { attributes: true });
     
     return () => {
       document.body.removeChild(container);
       document.head.removeChild(style);
-      observer.disconnect();
+      classObserver.disconnect();
+      styleObserver.disconnect();
     };
-  }, []);
+  }, [mounted]);
   
   return null;
 };

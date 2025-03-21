@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import './globals.css';
 import { Analytics } from "@vercel/analytics/react";
 import ScrollProgress from '@/components/features/ScrollProgress';
 import FloatingElements from '@/components/features/FloatingElements';
 import KeyboardHint from '@/components/features/KeyboardHint';
 import ThemeProvider from '@/components/features/ThemeProvider';
+import ColorThemeProvider from '@/components/features/ColorThemeProvider';
 import SecretGamingProfiles from '@/components/features/SecretGamingProfiles';
+import ColorPicker from '@/components/features/ColorPicker';
 import { Metadata, Viewport } from 'next';
 
 export const viewport: Viewport = {
@@ -33,11 +35,17 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className="overflow-x-hidden">
         <ThemeProvider />
+        <Suspense fallback={null}>
+          <ColorThemeProvider />
+        </Suspense>
         
         <ScrollProgress />
         <FloatingElements />
         <SecretGamingProfiles />
         <KeyboardHint />
+        <Suspense fallback={null}>
+          <ColorPicker />
+        </Suspense>
         
         <main className="overflow-x-hidden relative w-full">
           {children}
