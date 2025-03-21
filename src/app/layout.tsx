@@ -5,7 +5,9 @@ import ScrollProgress from '@/components/features/ScrollProgress';
 import FloatingElements from '@/components/features/FloatingElements';
 import KeyboardHint from '@/components/features/KeyboardHint';
 import ThemeProvider from '@/components/features/ThemeProvider';
+import ColorThemeProvider from '@/components/features/ColorThemeProvider';
 import SecretGamingProfiles from '@/components/features/SecretGamingProfiles';
+import ColorPicker from '@/components/features/ColorPicker';
 import { Metadata, Viewport } from 'next';
 
 export const viewport: Viewport = {
@@ -16,7 +18,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'nocturnal625',
-  description: 'Software Developer & Automation Engineer specializing in web3, Python automation, and gaming communities.',
+  description: 'Software Developer & Automation Engineer',
   icons: {
     icon: '/images/favicon.png',
     shortcut: '/images/favicon.png',
@@ -33,11 +35,13 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className="overflow-x-hidden">
         <ThemeProvider />
+        <ColorThemeProvider />
         
         <ScrollProgress />
         <FloatingElements />
         <SecretGamingProfiles />
         <KeyboardHint />
+        <ColorPicker />
         
         <main className="overflow-x-hidden relative w-full">
           {children}
