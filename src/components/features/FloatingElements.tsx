@@ -1,11 +1,14 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 const FloatingElements: React.FC = () => {
   const [mounted, setMounted] = useState(false);
+  const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     setMounted(true);
+    
+    if (!mounted) return;
     
     const container = document.createElement('div');
     container.className = 'fixed inset-0 pointer-events-none z-0 overflow-hidden';
@@ -37,11 +40,13 @@ const FloatingElements: React.FC = () => {
     };
     
     const createShapes = () => {
+      if (!container || !document.body.contains(container)) return;
+      
       container.innerHTML = '';
       
       const isDarkMode = document.documentElement.classList.contains('dark');
       const colors = getThemeColors();
-      
+
       for (let i = 0; i < 20; i++) {
         const element = document.createElement('div');
         
@@ -146,30 +151,83 @@ const FloatingElements: React.FC = () => {
 
     createShapes();
 
+    const debouncedCreateShapes = () => {
+      if (debounceTimerRef.current) {
+        clearTimeout(debounceTimerRef.current);
+      }
+
+      debounceTimerRef.current = setTimeout(() => {
+        createShapes();
+        debounceTimerRef.current = null;
+      }, 300);
+    };
+
     const classObserver = new MutationObserver((mutations) => {
+      let shouldUpdate = false;
+      
       mutations.forEach((mutation) => {
         if (mutation.attributeName === 'class') {
-          createShapes();
+          const oldValue = mutation.oldValue || '';
+          const newValue = (mutation.target as Element).getAttribute('class') || '';
+
+          if (
+            (oldValue.includes('dark') !== newValue.includes('dark')) ||
+            (oldValue.includes('has-theme') !== newValue.includes('has-theme'))
+          ) {
+            shouldUpdate = true;
+          }
         }
       });
+      
+      if (shouldUpdate) {
+        debouncedCreateShapes();
+      }
     });
 
     const styleObserver = new MutationObserver((mutations) => {
+      let shouldUpdate = false;
+      
       mutations.forEach((mutation) => {
         if (mutation.attributeName === 'style') {
-          createShapes();
+          const style = (mutation.target as HTMLElement).style;
+          if (
+            style.getPropertyValue('--theme-color') ||
+            style.getPropertyValue('--theme-color-rgb')
+          ) {
+            shouldUpdate = true;
+          }
         }
       });
+      
+      if (shouldUpdate) {
+        debouncedCreateShapes();
+      }
+    });
+
+    classObserver.observe(document.documentElement, { 
+      attributes: true,
+      attributeFilter: ['class'],
+      attributeOldValue: true
     });
     
-    classObserver.observe(document.documentElement, { attributes: true });
-    styleObserver.observe(document.documentElement, { attributes: true });
+    styleObserver.observe(document.documentElement, { 
+      attributes: true,
+      attributeFilter: ['style']
+    });
     
     return () => {
-      document.body.removeChild(container);
-      document.head.removeChild(style);
+      if (document.body.contains(container)) {
+        document.body.removeChild(container);
+      }
+      if (document.head.contains(style)) {
+        document.head.removeChild(style);
+      }
       classObserver.disconnect();
       styleObserver.disconnect();
+      
+      if (debounceTimerRef.current) {
+        clearTimeout(debounceTimerRef.current);
+      }
     };
   }, [mounted]);
   
