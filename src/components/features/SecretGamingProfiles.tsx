@@ -30,7 +30,7 @@ function SecretGamingProfiles(): React.ReactNode {
     },
     { 
       platform: 'Valorant', 
-      id: 'nocturnal625#dalha', 
+      id: 'nocturnal625#yunha', 
       icon: <SiRiotgames className="h-6 w-6 text-red-600" />,
       color: 'bg-red-100 dark:bg-red-900'
     },
@@ -47,7 +47,7 @@ function SecretGamingProfiles(): React.ReactNode {
       color: 'bg-yellow-100 dark:bg-yellow-900'
     },
     { 
-      platform: 'Star Rail', 
+      platform: 'Honkai: Star Rail', 
       id: '802741718', 
       icon: <FaTrain className="h-6 w-6 text-purple-500" />,
       color: 'bg-purple-100 dark:bg-purple-900'
