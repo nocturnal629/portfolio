@@ -14,10 +14,10 @@ export const projects: Project[] = [
     link: "https://github.com/nocturnal625/sabong-saga-genesis-sales"
   },
   {
-    title: "Sabong Saga Genesis Listings Tracker",
-    description: "Monitors NFT listings on Mavis Market, posts updates to Discord channel",
-    tech: ["Python", "GraphQL", "Discord Webhooks"],
-    link: "https://github.com/nocturnal625/sabong-saga-genesis-listings"
+    title: "Lazy Signal Fire",
+    description: "Automated blockchain transaction sender that calls the fire() function periodically",
+    tech: ["TypeScript", "Ethers.js", "Ronin"],
+    link: "https://github.com/nocturnal625/lazy-signal-fire"
   },
   {
     title: "Sabong Saga Crypto Token & ERC20 Dashboard",

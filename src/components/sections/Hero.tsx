@@ -56,7 +56,7 @@ const Hero: React.FC<HeroProps> = ({ activeSection, onSectionChange }) => {
             <span className="sr-only">X</span>
           </Link>
           <Link 
-            href="https://discordlookup.com/user/904940122468909138" 
+            href="https://discord.com/users/904940122468909138" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-blue-600 hover:text-teal-600 dark:text-blue-400 dark:hover:text-teal-400 transition-colors"
