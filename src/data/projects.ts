@@ -20,8 +20,8 @@ export const projects: Project[] = [
     link: "https://github.com/nocturnal625/lazy-signal-fire"
   },
   {
-    title: "Sabong Saga Crypto Token & ERC20 Dashboard",
-    description: "Real-time dashboard for tracking Sabong-Saga token and ERC-20 transfers",
+    title: "Sabong Saga crypto & ERC20 Token Dashboard",
+    description: "Real-time dashboard for tracking Sabong-Saga crypto and ERC-20 token transfers",
     tech: ["Next.js", "Tailwind CSS", "Vercel", "GraphQL", "Ether.js"],
     link: "https://github.com/nocturnal625/sabong-saga-dashboard"
   },
@@ -50,9 +50,9 @@ export const projects: Project[] = [
     link: "https://github.com/nocturnal625/delubyo"
   },
   {
-    title: "Wild Forest Lords Staking Dashboard",
-    description: "Dashboard to track and visualize staking statistics for Wild Forest Lords",
+    title: "Wild Forest Community",
+    description: "A hub for tools made for the Wild Forest community by the Wild Forest community",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "GraphQL", "Redis", "Vercel"],
-    link: "https://github.com/nocturnal625/wild-forest-lords-staking-dashboard"
+    link: "https://github.com/nocturnal625/wild-forest-community"
   }
 ];
