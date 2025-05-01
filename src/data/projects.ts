@@ -32,10 +32,10 @@ export const projects: Project[] = [
     link: "https://github.com/nocturnal625/Sierra"
   },
   {
-    title: "Crypto Price Bot",
-    description: "Multi-currency crypto price tracker for Discord",
-    tech: ["Python", "CoinGecko API", "Discord.py"],
-    link: "https://github.com/nocturnal625/discord-crypto-price-bot"
+    title: "Pokétwo Pokédex Bot",
+    description: "Identifies wild Pokémon from Pokétwo bot and sends notifications to subscribed users",
+    tech: ["Python", "Discord.py", "Google Gemini API", "AI Image Recognition"],
+    link: "https://github.com/nocturnal625/poketwo-pokedex"
   },
   {
     title: "Wild Forest NFT Sales Tracker",
