@@ -8,7 +8,7 @@ export const experiences: Experience[] = [
     responsibilities: [
       "Built internal tools with Retool/Jira/Google Sheet/Discord Bot",
       "Automated Discord community engagement for 50K+ users via Python bots",
-      "Provided API/GraphQL and game development support for team/developers and community members"
+      "Provided API/GraphQL and game development support for team/developers and community members",
       "Designed automated workflows and business processes via Jira/Retool integrations"
     ]
   },
