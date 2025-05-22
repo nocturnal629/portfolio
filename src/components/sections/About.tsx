@@ -9,10 +9,13 @@ const About: React.FC = () => {
         <SectionTitle>About Me</SectionTitle>
         <div className="prose dark:prose-invert max-w-none">
           <p className="text-lg mb-4 text-gray-600 dark:text-gray-300">
-            I&apos;m an automation-focused developer with expertise in Python scripting, Discord bots, and workflow automation for web3 and gaming communities. Skilled in building internal tools using Retool, Jira, and Next.js, and creating public-facing dashboards for blockchain metrics.
+            I&apos;m an automation-focused developer with expertise in Python scripting, Discord bots, and workflow automation for web3 and gaming communities. Recently served as a Software Developer at Axie Infinity Limited, where I built internal tools using Retool, Jira, and Next.js, and created public-facing dashboards for blockchain metrics.
+          </p>
+          <p className="text-lg mb-4 text-gray-600 dark:text-gray-300">
+            Experienced in automating community engagement for 50K+ users through Discord bots and developing business process automation pipelines, including automated workflow systems for request management through Google Forms, Slack notifications, and Jira ticket routing. Contributed to API/GraphQL development and game development support, streamlining departmental operations and improving business efficiency.
           </p>
           <p className="text-lg mb-6 text-gray-600 dark:text-gray-300">
-            Proficient in REST/GraphQL APIs, Linux server management, and AI-assisted coding to optimize development workflows. Passionate about solving complex problems through automation and delivering scalable, user-friendly solutions.
+            Proficient in Python, PostgreSQL, REST/GraphQL APIs, backend frameworks, and Linux server management. Experienced with AI-assisted coding to optimize development workflows. Passionate about solving complex problems through automation and delivering scalable, user-friendly solutions for gaming and Web3 ecosystems.
           </p>
           
           <div className="mt-10">
