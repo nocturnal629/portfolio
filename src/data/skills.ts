@@ -1,10 +1,10 @@
 import { SkillCategory } from '@/types';
-import { DiPython, DiJavascript1, DiReact, DiNodejs, DiMongodb, DiDocker, DiLinux } from 'react-icons/di';
-import { SiTypescript, SiGraphql, SiNextdotjs, SiTailwindcss, SiJira, SiVercel } from 'react-icons/si';
-import { AiFillApi, AiFillHtml5 } from 'react-icons/ai';
-import { FaEthereum, FaTools, FaServer } from 'react-icons/fa';
-import { BsCodeSlash, BsFileEarmarkCode } from 'react-icons/bs';
-import { RiDashboardFill } from 'react-icons/ri';
+import { DiPython, DiJavascript1, DiReact, DiNodejs, DiMongodb, DiLinux, DiRedis, DiPostgresql } from 'react-icons/di';
+import { SiTypescript, SiGraphql, SiNextdotjs, SiFastapi, SiFlask, SiSupabase, SiAmazon, SiGooglecloud, SiGit, SiDocker } from 'react-icons/si';
+import { AiFillApi } from 'react-icons/ai';
+import { FaTools } from 'react-icons/fa';
+import { BsCodeSlash, BsDatabase, BsCloud, BsGear } from 'react-icons/bs';
+import { MdDevices } from 'react-icons/md';
 
 export const skills: SkillCategory[] = [
   {
@@ -12,50 +12,50 @@ export const skills: SkillCategory[] = [
     icon: BsCodeSlash,
     skills: [
       { name: "Python", icon: DiPython },
-      { name: "JavaScript", icon: DiJavascript1 },
       { name: "TypeScript", icon: SiTypescript },
+      { name: "JavaScript", icon: DiJavascript1 },
       { name: "GraphQL", icon: SiGraphql }
     ]
   },
   {
-    name: "Frontend",
-    icon: AiFillHtml5,
+    name: "Frameworks",
+    icon: MdDevices,
     skills: [
       { name: "Next.js", icon: SiNextdotjs },
       { name: "React", icon: DiReact },
-      { name: "Tailwind CSS", icon: SiTailwindcss },
-      { name: "HTML/CSS", icon: AiFillHtml5 }
-    ]
-  },
-  {
-    name: "Backend/Tools",
-    icon: FaServer,
-    skills: [
       { name: "Node.js", icon: DiNodejs },
-      { name: "REST APIs", icon: AiFillApi },
-      { name: "MongoDB", icon: DiMongodb },
-      { name: "Docker", icon: DiDocker },
-      { name: "Linux", icon: DiLinux }
+      { name: "FastAPI", icon: SiFastapi },
+      { name: "Flask", icon: SiFlask }
     ]
   },
   {
-    name: "Web3",
-    icon: FaEthereum,
+    name: "Databases",
+    icon: BsDatabase,
     skills: [
-      { name: "Web3.js", icon: FaEthereum },
-      { name: "Ether.js", icon: FaEthereum },
-      { name: "Smart Contracts/Solidity", icon: BsFileEarmarkCode },
-      { name: "RPC", icon: FaServer }
+      { name: "MongoDB", icon: DiMongodb },
+      { name: "Redis", icon: DiRedis },
+      { name: "PostgreSQL", icon: DiPostgresql },
+      { name: "Supabase", icon: SiSupabase }
     ]
   },
   {
-    name: "Platforms",
+    name: "Cloud & Infrastructure",
+    icon: BsCloud,
+    skills: [
+      { name: "Linux Servers", icon: DiLinux },
+      { name: "AWS", icon: SiAmazon },
+      { name: "GCP", icon: SiGooglecloud },
+      { name: "REST/GraphQL APIs", icon: AiFillApi }
+    ]
+  },
+  {
+    name: "Tools & Practices",
     icon: FaTools,
     skills: [
-      { name: "Jira", icon: SiJira },
-      { name: "Superset", icon: RiDashboardFill },
-      { name: "Vercel", icon: SiVercel },
-      { name: "Retool", icon: FaTools }
+      { name: "Git", icon: SiGit },
+      { name: "CI/CD", icon: BsGear },
+      { name: "Docker", icon: SiDocker },
+      { name: "Agile Development", icon: FaTools }
     ]
   }
 ];

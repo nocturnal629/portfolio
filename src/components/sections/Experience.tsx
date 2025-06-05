@@ -20,7 +20,7 @@ const Experience: React.FC = () => {
               </div>
               <div className="text-lg mb-3 text-gray-600 dark:text-gray-300">{exp.company}</div>
               <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300">
-                {exp.responsibilities.map((resp, i) => (
+                {exp.responsibilities?.map((resp, i) => (
                   <li key={i}>{resp}</li>
                 ))}
               </ul>
