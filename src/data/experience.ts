@@ -2,6 +2,11 @@ import { Experience } from '@/types';
 
 export const experiences: Experience[] = [
   {
+    title: "Full-Stack Software Developer & AI/ML Engineer",
+    company: "MabuhayTech Corporation",
+    period: "June 2025 - Present"
+  },
+  {
     title: "Software Developer",
     company: "Axie Infinity Limited",
     period: "Oct 2022 - Oct 2024",
