@@ -24,7 +24,7 @@ const Hero: React.FC<HeroProps> = ({ activeSection, onSectionChange }) => {
             [type: nocturnal625]
           </span>
         </h1>
-        <p className="text-xl mb-4 text-gray-800 dark:text-gray-200">Full-Stack Software Developer & AI/ML Engineer</p>
+        <p className="text-xl mb-4 text-gray-800 dark:text-gray-200">Full-Stack Software Developer</p>
         <p className="mb-8 text-gray-600 dark:text-gray-400">Metropolitan Manila, Philippines</p>
         
         <div className="flex justify-center space-x-6 mb-12">
