@@ -18,7 +18,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'nocturnal625',
-  description: 'Full-Stack Software Developer & AI/ML Engineer',
+  description: 'Full-Stack Software Developer',
   icons: {
     icon: '/images/favicon.png',
     shortcut: '/images/favicon.png',
