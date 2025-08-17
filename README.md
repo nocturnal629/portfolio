@@ -1,3 +1,3 @@
 # nocturnal625 - Portfolio Website
 
-**[▶ Live](nocturnal625-portfolio.vercel.app/)**
+**[▶ Live](www.nocturnal625.dev/)**
