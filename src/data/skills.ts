@@ -1,6 +1,7 @@
 import { SkillCategory } from '@/types';
 import { DiPython, DiJavascript1, DiReact, DiNodejs, DiMongodb, DiLinux, DiRedis, DiPostgresql } from 'react-icons/di';
-import { SiTypescript, SiGraphql, SiNextdotjs, SiFastapi, SiFlask, SiSupabase, SiAmazon, SiGooglecloud, SiGit, SiDocker, SiKubernetes, SiNeondatabase } from 'react-icons/si';
+import { SiTypescript, SiGraphql, SiNextdotjs, SiFastapi, SiFlask, SiSupabase, SiAmazon, SiGooglecloud, SiGit, SiDocker, SiKubernetes } from 'react-icons/si';
+import { FaDatabase } from "react-icons/fa";
 import { AiFillApi } from 'react-icons/ai';
 import { FaTools } from 'react-icons/fa';
 import { BsCodeSlash, BsDatabase, BsCloud, BsGear } from 'react-icons/bs';
@@ -44,7 +45,7 @@ export const skills: SkillCategory[] = [
       { name: "Redis", icon: DiRedis },
       { name: "PostgreSQL", icon: DiPostgresql },
       { name: "Supabase", icon: SiSupabase },
-      { name: "NeonDB", icon: SiNeondatabase }
+      { name: "NeonDB", icon: FaDatabase }
     ]
   },
   {
