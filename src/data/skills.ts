@@ -1,6 +1,6 @@
 import { SkillCategory } from '@/types';
 import { DiPython, DiJavascript1, DiReact, DiNodejs, DiMongodb, DiLinux, DiRedis, DiPostgresql } from 'react-icons/di';
-import { SiTypescript, SiGraphql, SiNextdotjs, SiFastapi, SiFlask, SiSupabase, SiAmazon, SiGooglecloud, SiGit, SiDocker } from 'react-icons/si';
+import { SiTypescript, SiGraphql, SiNextdotjs, SiFastapi, SiFlask, SiSupabase, SiAmazon, SiGooglecloud, SiGit, SiDocker, SiKubernetes, SiNeondatabase } from 'react-icons/si';
 import { AiFillApi } from 'react-icons/ai';
 import { FaTools } from 'react-icons/fa';
 import { BsCodeSlash, BsDatabase, BsCloud, BsGear } from 'react-icons/bs';
@@ -29,13 +29,22 @@ export const skills: SkillCategory[] = [
     ]
   },
   {
+    name: "APIs & Integration",
+    icon: AiFillApi,
+    skills: [
+      { name: "REST APIs", icon: AiFillApi },
+      { name: "GraphQL", icon: SiGraphql }
+    ]
+  },
+  {
     name: "Databases",
     icon: BsDatabase,
     skills: [
       { name: "MongoDB", icon: DiMongodb },
       { name: "Redis", icon: DiRedis },
       { name: "PostgreSQL", icon: DiPostgresql },
-      { name: "Supabase", icon: SiSupabase }
+      { name: "Supabase", icon: SiSupabase },
+      { name: "NeonDB", icon: SiNeondatabase }
     ]
   },
   {
@@ -44,8 +53,7 @@ export const skills: SkillCategory[] = [
     skills: [
       { name: "Linux Servers", icon: DiLinux },
       { name: "AWS", icon: SiAmazon },
-      { name: "GCP", icon: SiGooglecloud },
-      { name: "REST/GraphQL APIs", icon: AiFillApi }
+      { name: "GCP", icon: SiGooglecloud }
     ]
   },
   {
@@ -55,6 +63,7 @@ export const skills: SkillCategory[] = [
       { name: "Git", icon: SiGit },
       { name: "CI/CD", icon: BsGear },
       { name: "Docker", icon: SiDocker },
+      { name: "Kubernetes", icon: SiKubernetes },
       { name: "Agile Development", icon: FaTools }
     ]
   }

@@ -2,8 +2,20 @@ import { Project } from '@/types';
 
 export const projects: Project[] = [
   {
+    title: "AuthentiCute",
+    description: "User Authentication and Management System that provides secure login, registration, and user profile management capabilities.",
+    tech: ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy", "HTML", "Google OAuth", "Docker"],
+    link: "https://github.com/nocturnal625/AuthentiCute"
+  },
+  {
+    title: "Outlanders",
+    description: "A casual, adventure, and strategy-focused tower defense mobile video game that combines fun gameplay with learning about Philippine Literature, specifically Bugtong (Riddles), Alamat (Legends), Kwentong-bayan (Folktales), and Philippine Mythical Creatures",
+    tech: ["C#", "Unity", "ShaderLab", "Mathematica", "HLSL"],
+    link: "https://github.com/nocturnal625/Outlanders"
+  },
+  {
     title: "Delubyo",
-    description: "Interactive text-based survival game set during a Philippine typhoon",
+    description: "An interactive text adventure game set in the Philippines during a typhoon disaster. Inspired by games like Lifeline (3 Minute Games, Inc.) and Firewatch, Delubyo creates an immersive storytelling experience where your choices shape the narrative.",
     tech: ["TypeScript", "HTML/CSS", "Vercel"],
     link: "https://github.com/nocturnal625/delubyo"
   },

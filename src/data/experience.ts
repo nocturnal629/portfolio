@@ -2,6 +2,16 @@ import { Experience } from '@/types';
 
 export const experiences: Experience[] = [
   {
+    title: "Python Backend Developer",
+    company: "FiberFin",
+    period: "Aug 2025 - Present",
+    responsibilities: [
+      "Architected data workflows with SQLAlchemy ORM and standardized response models, improving API consistency across services",
+      "Implemented Alembic migrations enabling zero-downtime database updates with full version control",
+      "Orchestrated Docker and Kubernetes containerization for seamless multi-environment deployments and improved scalability"
+    ]
+  },
+  {
     title: "Software Developer",
     company: "Axie Infinity Limited",
     period: "Oct 2022 - Nov 2024",
