@@ -32,37 +32,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  // Check for stored theme preference
-                  var storedTheme = localStorage.getItem('theme');
-                  
-                  // Check system preference
-                  var systemPrefersDark = window.matchMedia && 
-                    window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  
-                  // Apply theme based on priorities:
-                  // 1. Stored theme has highest priority
-                  // 2. System preference if no stored theme
-                  if (storedTheme === 'dark' || (!storedTheme && systemPrefersDark)) {
-                    document.documentElement.classList.add('dark');
-                  } else if (storedTheme === 'light' || (!storedTheme && !systemPrefersDark)) {
-                    document.documentElement.classList.remove('dark');
-                  }
-                } catch (e) {
-                  // Fail silently if localStorage is not available or other issues
-                  console.error('Error applying theme:', e);
-                }
-              })();
-            `
-          }}
-        />
-      </head>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className="overflow-x-hidden">
         <ThemeProvider />
         <Suspense fallback={null}>
