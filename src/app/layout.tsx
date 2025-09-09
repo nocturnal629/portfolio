@@ -61,7 +61,7 @@ export default function RootLayout({
           <ColorThemeProvider />
         </Suspense>
         
-        <ScrollProgress />oes
+        <ScrollProgress />
         <FloatingElements />
         <SecretGamingProfiles />
         <KeyboardHint />
