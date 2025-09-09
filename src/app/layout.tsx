@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     apple: '/favicon.png',
   },
   openGraph: {
-    title: 'nocturnal625',
+    title: 'nocturnal625 - Python Developer',
     description: 'Python Developer',
     url: 'https://www.nocturnal625.dev',
     siteName: 'nocturnal625',
     images: [
       {
-        url: '/favicon.png',
+        url: 'https://www.nocturnal625.dev/favicon.png',
         width: 1200,
         height: 630,
         alt: 'nocturnal625',
@@ -44,7 +44,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'nocturnal625',
     description: 'Python Developer',
-    images: ['/favicon.png'],
+    site: '@nocturnal625',
+    creator: '@nocturnal625',
+    images: ['https://www.nocturnal625.dev/favicon.png'],
   },
 };
 
