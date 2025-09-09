@@ -35,6 +35,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: 'nocturnal625',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -47,6 +48,11 @@ export const metadata: Metadata = {
     site: '@nocturnal625',
     creator: '@nocturnal625',
     images: ['https://www.nocturnal625.dev/favicon.png'],
+  },
+  other: {
+    'og:image:width': '1200',
+    'og:image:height': '630',
+    'og:image:type': 'image/png',
   },
 };
 
