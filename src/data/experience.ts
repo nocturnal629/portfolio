@@ -2,36 +2,25 @@ import { Experience } from '@/types';
 
 export const experiences: Experience[] = [
   {
-    title: "Python Backend Developer",
-    company: "FiberFin",
-    period: "Aug 2025 - Present",
+    title: "Your Job Title",
+    company: "Your Company Name",
+    period: "Start Date - End Date",
     responsibilities: [
-      "Architected data workflows with SQLAlchemy ORM and standardized response models, improving API consistency across services",
-      "Implemented Alembic migrations enabling zero-downtime database updates with full version control",
-      "Orchestrated Docker and Kubernetes containerization for seamless multi-environment deployments and improved scalability",
-      "Designed and implemented secure OAuth 2.0 authentication system supporting Google, Sage Intacct, Facebook, and Microsoft 365 integrations with comprehensive token management, CSRF protection, and encrypted credential storage"
+      "Describe your key responsibilities and achievements",
+      "Highlight specific technologies or methodologies you used",
+      "Quantify your impact where possible (e.g., improved performance by X%)",
+      "Mention any leadership or collaboration experiences"
     ]
   },
   {
-    title: "Software Developer",
-    company: "Axie Infinity Limited",
-    period: "Oct 2022 - Nov 2024",
+    title: "Previous Job Title",
+    company: "Previous Company Name",
+    period: "Start Date - End Date",
     responsibilities: [
-      "Built internal tools with Retool/Jira/Google Sheet/Discord Bot",
-      "Automated Discord community engagement for 50K+ users via Python bots",
-      "Provided API/GraphQL and game development support for team/developers and community members",
-      "Designed automated workflows and business processes via Jira/Retool integrations",
-      "Provided technical and communication support to community builders, ensuring timely delivery of builds to engineering"
-    ]
-  },
-  {
-    title: "Technical and Game Support",
-    company: "Axie Infinity Limited",
-    period: "Aug 2021 - Oct 2022",
-    responsibilities: [
-      "Provided support to 30K+ players via Discord and Zendesk tickets",
-      "Monitored and moderated Discord channels and servers, resolving technical issues",
-      "Created and maintained a knowledge base for player issues and game guides"
+      "List your main responsibilities in this role",
+      "Include any notable projects or achievements",
+      "Mention technologies or tools you worked with",
+      "Describe any growth or learning experiences"
     ]
   }
 ];

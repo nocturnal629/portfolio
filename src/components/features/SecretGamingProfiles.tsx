@@ -18,49 +18,19 @@ function SecretGamingProfiles(): React.ReactNode {
   const gamingProfiles: GamingProfile[] = [
     { 
       platform: 'Steam', 
-      id: 'nocturnal625 (140021211)', 
+      id: 'YourSteamUsername', 
       icon: <FaSteam className="h-6 w-6 text-blue-600" />,
       color: 'bg-blue-100 dark:bg-blue-900'
     },
     { 
-      platform: 'PlayStation Network', 
-      id: 'nocturnal625', 
-      icon: <FaPlaystation className="h-6 w-6 text-indigo-600" />,
-      color: 'bg-indigo-100 dark:bg-indigo-900'
-    },
-    { 
       platform: 'Valorant', 
-      id: 'nocturnal625#yunha', 
+      id: 'YourValorantTag', 
       icon: <SiRiotgames className="h-6 w-6 text-red-600" />,
       color: 'bg-red-100 dark:bg-red-900'
     },
     { 
-      platform: 'Roblox', 
-      id: '@nocturnal625', 
-      icon: <SiRoblox className="h-6 w-6 text-slate-800 dark:text-white" />,
-      color: 'bg-gray-100 dark:bg-gray-900'
-    },
-    { 
-      platform: 'Genshin Impact', 
-      id: '806859266', 
-      icon: <GiSwordBrandish className="h-6 w-6 text-yellow-500" />,
-      color: 'bg-yellow-100 dark:bg-yellow-900'
-    },
-    { 
-      platform: 'Honkai: Star Rail', 
-      id: '802741718', 
-      icon: <FaTrain className="h-6 w-6 text-purple-500" />,
-      color: 'bg-purple-100 dark:bg-purple-900'
-    },
-    { 
-      platform: 'Zenless Zone Zero', 
-      id: '1301473584', 
-      icon: <FaUserSecret className="h-6 w-6 text-green-500" />,
-      color: 'bg-green-100 dark:bg-green-900'
-    },
-    { 
       platform: 'League of Legends', 
-      id: '', 
+      id: 'YourLoLUsername', 
       icon: <SiLeagueoflegends className="h-6 w-6 text-yellow-600" />,
       color: 'bg-yellow-100 dark:bg-yellow-900'
     }
@@ -73,7 +43,7 @@ function SecretGamingProfiles(): React.ReactNode {
       const trimmedSequence = newSequence.slice(-20);
       setKeySequence(trimmedSequence);
       
-      if (trimmedSequence.includes('nocturnal625')) {
+      if (trimmedSequence.includes('yourname')) {
         setIsVisible(true);
         setKeySequence('');
       }
@@ -99,7 +69,7 @@ function SecretGamingProfiles(): React.ReactNode {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center mb-6">
-          <h3 className="text-xl font-bold text-teal-600 dark:text-teal-400">nocturnal625&apos;s Gaming Profiles</h3>
+          <h3 className="text-xl font-bold text-teal-600 dark:text-teal-400">Your Name&apos;s Gaming Profiles</h3>
           <button 
             onClick={closePopup}
             className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white"
@@ -124,7 +94,7 @@ function SecretGamingProfiles(): React.ReactNode {
         </div>
         
         <div className="mt-6 text-xs text-gray-500 dark:text-gray-400 text-center">
-          <p>Type &quot;nocturnal625&quot; anywhere to show these gaming profiles again</p>
+          <p>Type &quot;yourname&quot; anywhere to show these gaming profiles again</p>
           <p>Click outside or press ✕ to close</p>
         </div>
       </div>

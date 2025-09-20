@@ -1,8 +1,8 @@
-# Portfolio Website
+# Portfolio Template
 
-A modern, responsive portfolio website built with Next.js and TypeScript. This project showcases personal projects, work experience, skills, and provides an interactive way for visitors to learn more about the developer.
+A modern, responsive portfolio website template built with Next.js and TypeScript. This template allows you to easily create your own portfolio website to showcase your personal projects, work experience, skills, and provide an interactive way for visitors to learn more about you.
 
-**[🌐 Live Site](https://www.nocturnal625.dev/)**
+**[🌐 Template Demo](https://yourname.dev/)**
 
 ## ✨ Features
 
@@ -33,9 +33,9 @@ A modern, responsive portfolio website built with Next.js and TypeScript. This p
 
 ### Installation
 
-1. **Clone the repository**
+1. **Fork or clone the repository**
    ```bash
-   git clone https://github.com/nocturnal625/portfolio.git
+   git clone https://github.com/yourusername/portfolio.git
    cd portfolio
    ```
 
@@ -87,24 +87,32 @@ portfolio/
 ### Personal Information
 
 1. **Update data files** in `src/data/`:
-   - `projects.ts` - Your projects and repositories
-   - `experience.ts` - Work history and professional experience
-   - `skills.ts` - Technical skills and proficiencies
+   - `projects.ts` - Replace placeholder projects with your actual projects and repositories
+   - `experience.ts` - Replace placeholder experience with your work history and professional experience
+   - `skills.ts` - Update skills to match your technical proficiencies
 
 2. **Modify section content** in `src/components/sections/`:
-   - `Hero.tsx` - Landing section with your name and title
-   - `About.tsx` - Personal introduction and bio
-   - `Projects.tsx` - Project showcase
-   - `Experience.tsx` - Work experience timeline
+   - `Hero.tsx` - Update your name, job title, location, and social media links
+   - `About.tsx` - Replace placeholder text with your personal introduction and bio
+   - `Projects.tsx` - The project showcase will automatically use your data from `projects.ts`
+   - `Experience.tsx` - The experience timeline will automatically use your data from `experience.ts`
 
-3. **Update images**:
-   - Replace favicon in `public/images/favicon.png`
+3. **Update metadata** in `src/app/layout.tsx`:
+   - Change title, description, and Open Graph data
+   - Update social media handles and website URL
+
+4. **Update images**:
+   - Replace favicon in `public/favicon.png`
    - Add profile pictures or project screenshots as needed
 
-4. **Customize styling**:
+5. **Customize styling**:
    - Modify colors in `tailwind.config.js`
    - Update global styles in `src/app/globals.css`
    - Customize component styles using Tailwind classes
+
+6. **Optional: Gaming Profiles** in `src/components/features/SecretGamingProfiles.tsx`:
+   - Replace placeholder gaming usernames with your actual gaming profiles
+   - Update the trigger keyword from "yourname" to your preferred keyword
 
 ### Theme Colors
 
@@ -143,11 +151,12 @@ This Next.js application can be deployed on any platform that supports Node.js:
 
 ## 🌐 Domain Setup
 
-If you want to use a custom domain like the original:
+If you want to use a custom domain:
 
-1. Purchase a domain from [Porkbun](https://porkbun.com/) or any domain registrar
+1. Purchase a domain from [Porkbun](https://porkbun.com/), [Namecheap](https://www.namecheap.com/), or any domain registrar
 2. Configure DNS settings to point to your hosting provider
 3. Add the domain in your hosting platform's dashboard
+4. Update the domain references in `src/app/layout.tsx` metadata
 
 ## 📄 License
 

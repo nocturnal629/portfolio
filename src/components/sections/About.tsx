@@ -9,13 +9,7 @@ const About: React.FC = () => {
         <SectionTitle>About Me</SectionTitle>
         <div className="prose dark:prose-invert max-w-none">
           <p className="text-lg mb-4 text-gray-600 dark:text-gray-300">
-            Python developer with expertise in FastAPI framework for building robust backend services and APIs. Experienced in TypeScript and React for modern web application development, maintaining a strong foundation in both frontend and backend technologies.
-          </p>
-          <p className="text-lg mb-4 text-gray-600 dark:text-gray-300">
-            Proficient in building scalable backend services using Python with FastAPI, SQLAlchemy ORM, and PostgreSQL. Skilled in creating responsive web applications using React and TypeScript, with experience in Next.js for full-stack development. Experienced in working with both SQL and NoSQL databases, RESTful and GraphQL APIs, and cloud deployment solutions including Docker and Kubernetes.
-          </p>
-          <p className="text-lg mb-6 text-gray-600 dark:text-gray-300">
-            Strong foundation in software development principles with experience in version control, CI/CD practices, and collaborative development workflows. Passionate about creating clean, maintainable code and building user-friendly applications that solve real-world problems.
+            [Your primary role] with expertise in [your main technologies] for building [type of applications]. Experienced in [additional technologies] for modern [type of development], maintaining a strong foundation in both frontend and backend technologies.
           </p>
           
           <div className="mt-10">

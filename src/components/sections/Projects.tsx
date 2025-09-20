@@ -25,7 +25,7 @@ const Projects: React.FC = () => {
         
         <div className="text-center mt-8">
           <Button 
-            href="https://github.com/nocturnal625?tab=repositories" 
+            href="https://github.com/yourusername?tab=repositories" 
             variant="primary"
           >
             View All Projects

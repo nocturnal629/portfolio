@@ -17,8 +17,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'nocturnal625',
-  description: 'Python Developer',
+  title: 'Your Name',
+  description: 'Your Job Title',
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',
@@ -26,15 +26,15 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Portfolio',
-    description: 'Python Developer',
-    url: 'https://www.nocturnal625.dev',
-    siteName: 'nocturnal625',
+    description: 'Your Job Title',
+    url: 'https://www.yourname.dev',
+    siteName: 'Your Name',
     images: [
       {
-        url: 'https://www.nocturnal625.dev/favicon.png',
+        url: 'https://www.yourname.dev/favicon.png',
         width: 1200,
         height: 630,
-        alt: 'nocturnal625',
+        alt: 'Your Name',
         type: 'image/png',
       },
     ],
@@ -43,11 +43,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'nocturnal625',
-    description: 'Python Developer',
-    site: '@nocturnal625',
-    creator: '@nocturnal625',
-    images: ['https://www.nocturnal625.dev/favicon.png'],
+    title: 'Your Name',
+    description: 'Your Job Title',
+    site: '@yourusername',
+    creator: '@yourusername',
+    images: ['https://www.yourname.dev/favicon.png'],
   },
   other: {
     'og:image:width': '1200',

@@ -13,19 +13,14 @@ export const skills: SkillCategory[] = [
     icon: BsCodeSlash,
     skills: [
       { name: "Python", icon: DiPython },
-      { name: "TypeScript", icon: SiTypescript },
-      { name: "JavaScript", icon: DiJavascript1 },
-      { name: "GraphQL", icon: SiGraphql }
+      { name: "TypeScript", icon: SiTypescript }
     ]
   },
   {
     name: "Frameworks",
     icon: MdDevices,
     skills: [
-      { name: "Next.js", icon: SiNextdotjs },
       { name: "React", icon: DiReact },
-      { name: "Node.js", icon: DiNodejs },
-      { name: "FastAPI", icon: SiFastapi },
       { name: "Flask", icon: SiFlask }
     ]
   },
@@ -33,8 +28,7 @@ export const skills: SkillCategory[] = [
     name: "APIs & Integration",
     icon: AiFillApi,
     skills: [
-      { name: "REST APIs", icon: AiFillApi },
-      { name: "GraphQL", icon: SiGraphql }
+      { name: "REST APIs", icon: AiFillApi }
     ]
   },
   {
@@ -42,19 +36,14 @@ export const skills: SkillCategory[] = [
     icon: BsDatabase,
     skills: [
       { name: "MongoDB", icon: DiMongodb },
-      { name: "Redis", icon: DiRedis },
-      { name: "PostgreSQL", icon: DiPostgresql },
-      { name: "Supabase", icon: SiSupabase },
-      { name: "NeonDB", icon: FaDatabase }
+      { name: "PostgreSQL", icon: DiPostgresql }
     ]
   },
   {
     name: "Cloud & Infrastructure",
     icon: BsCloud,
     skills: [
-      { name: "Linux Servers", icon: DiLinux },
-      { name: "AWS", icon: SiAmazon },
-      { name: "GCP", icon: SiGooglecloud }
+      { name: "AWS", icon: SiAmazon }
     ]
   },
   {
@@ -62,9 +51,6 @@ export const skills: SkillCategory[] = [
     icon: FaTools,
     skills: [
       { name: "Git", icon: SiGit },
-      { name: "CI/CD", icon: BsGear },
-      { name: "Docker", icon: SiDocker },
-      { name: "Kubernetes", icon: SiKubernetes },
       { name: "Agile Development", icon: FaTools }
     ]
   }
