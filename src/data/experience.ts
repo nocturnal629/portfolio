@@ -9,7 +9,7 @@ export const experiences: Experience[] = [
       "Architected data workflows with SQLAlchemy ORM and standardized API responses",
       "Implemented Alembic migrations for zero-downtime database updates",
       "Orchestrated Docker and Kubernetes containerization for multi-environment deployments",
-      "Designed OAuth 2.0 authentication supporting Google and  Sage Intacct,  integrations with comprehensive token management, CSRF protection, and encrypted credential storage",
+      "Designed OAuth 2.0 authentication supporting Google and Sage Intacct integrations, with comprehensive token management, CSRF protection, and encrypted credential storage",
       "Implemented Casbin with combined ABAC and RBAC for multi-tenant hierarchies"
     ]
   },
