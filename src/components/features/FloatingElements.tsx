@@ -39,7 +39,7 @@ const getThemeForDate = (): Theme => {
     return 'valentines';
   }
   
-  if (month === 3 && day === 31) {
+  if (month === 4 && day === 5) {
     return 'easter';
   }
   
@@ -74,6 +74,7 @@ const FloatingElements: React.FC = () => {
   const [mounted, setMounted] = useState(false);
   const [currentTheme, setCurrentTheme] = useState<Theme>('default');
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const reactRootsRef = useRef<ReturnType<typeof createRoot>[]>([]);
 
   useEffect(() => {
     setMounted(true);
@@ -123,6 +124,16 @@ const FloatingElements: React.FC = () => {
     
     const createElements = () => {
       if (!container || !document.body.contains(container)) return;
+      
+      // Unmount all existing React roots before clearing the container
+      reactRootsRef.current.forEach(root => {
+        try {
+          root.unmount();
+        } catch (error) {
+          // Ignore errors if root is already unmounted
+        }
+      });
+      reactRootsRef.current = [];
       
       container.innerHTML = '';
       
@@ -256,6 +267,9 @@ const FloatingElements: React.FC = () => {
           const iconColor = isDarkMode ? colors.dark.replace('rgba(', '').replace(')', '') : colors.light.replace('rgba(', '').replace(')', '');
           const root = createRoot(element);
           root.render(<IconComponent style={{ color: `rgba(${iconColor}, ${opacity})`, fontSize: `${size}px` }} />);
+          
+          // Store the root for later cleanup
+          reactRootsRef.current.push(root);
         }
         
         container.appendChild(element);
@@ -341,6 +355,16 @@ const FloatingElements: React.FC = () => {
     });
     
     return () => {
+      // Unmount all React roots before cleanup
+      reactRootsRef.current.forEach(root => {
+        try {
+          root.unmount();
+        } catch (error) {
+          // Ignore errors if root is already unmounted
+        }
+      });
+      reactRootsRef.current = [];
+      
       if (document.body.contains(container)) {
         document.body.removeChild(container);
       }
