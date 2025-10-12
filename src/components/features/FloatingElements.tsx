@@ -18,6 +18,39 @@ const easterIcons = [GiEasterEgg, FaSun, FaLeaf];
 const thanksgivingIcons = [GiMapleLeaf, FaLeaf, FaSun];
 const summerIcons = [FaSun, FaFire, FaLeaf];
 
+// Calculate Easter Sunday for a given year using the Anonymous Gregorian algorithm (What the fuck?)
+const calculateEaster = (year: number): { month: number; day: number } => {
+  const a = year % 19;
+  const b = Math.floor(year / 100);
+  const c = year % 100;
+  const d = Math.floor(b / 4);
+  const e = b % 4;
+  const f = Math.floor((b + 8) / 25);
+  const g = Math.floor((b - f + 1) / 3);
+  const h = (19 * a + b - d - g + 15) % 30;
+  const i = Math.floor(c / 4);
+  const k = c % 4;
+  const l = (32 + 2 * e + 2 * i - h - k) % 7;
+  const m = Math.floor((a + 11 * h + 22 * l) / 451);
+  const n = Math.floor((h + l - 7 * m + 114) / 31);
+  const p = (h + l - 7 * m + 114) % 31;
+  
+  return { month: n, day: p + 1 };
+};
+
+// Check if current date falls within Holy Week (Palm Sunday to Easter Sunday) - Philippines tradition
+const isEasterPeriod = (month: number, day: number, year: number): boolean => {
+  const easter = calculateEaster(year);
+  const easterDate = new Date(year, easter.month - 1, easter.day);
+  
+  const palmSunday = new Date(easterDate);
+  palmSunday.setDate(easterDate.getDate() - 7);
+  
+  const currentDate = new Date(year, month - 1, day);
+  
+  return currentDate >= palmSunday && currentDate <= easterDate;
+};
+
 const getThemeForDate = (): Theme => {
   if (typeof window !== 'undefined') {
     const urlParams = new URLSearchParams(window.location.search);
@@ -30,6 +63,7 @@ const getThemeForDate = (): Theme => {
   const now = new Date();
   const month = now.getMonth() + 1;
   const day = now.getDate();
+  const year = now.getFullYear();
 
   if (month === 1 && day === 1) {
     return 'newyear';
@@ -39,7 +73,8 @@ const getThemeForDate = (): Theme => {
     return 'valentines';
   }
   
-  if (month === 4 && day === 5) {
+  // Check if current date falls within Holy Week (Palm Sunday to Easter Sunday) - Philippines tradition
+  if (isEasterPeriod(month, day, year)) {
     return 'easter';
   }
   
