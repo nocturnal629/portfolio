@@ -4,7 +4,7 @@ export const experiences: Experience[] = [
   {
     title: "Python Backend Developer",
     company: "FiberFin",
-    period: "Aug 2025 - Present",
+    period: "Aug 2025 - Oct 2025",
     responsibilities: [
       "Architected data workflows with SQLAlchemy ORM and standardized API responses",
       "Implemented Alembic migrations for zero-downtime database updates",
