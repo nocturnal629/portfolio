@@ -37,6 +37,12 @@ export const projects: Project[] = [
     link: "https://github.com/nocturnal625/Sierra"
   },
   {
+    title: "CursorStrike",
+    description: "A fun and interactive aim training game. Test your precision, reaction time, and build your aiming skills with multiple game modes and exciting power-ups!",
+    tech: ["JavaScript", "HTML5 Canvas", "CSS3", "Node.js", "Express", "Vercel"],
+    link: "https://github.com/nocturnal625/CursorStrike"
+  },
+  {
     title: "Portfolio",
     description: "A template portfolio for anyone who wants a website to showcase their skills and experiences",
     tech: ["HTML/CSS", "Vercel", "Typescript", "Next.js", "React"],
