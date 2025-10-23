@@ -37,6 +37,12 @@ export const projects: Project[] = [
     link: "https://github.com/nocturnal625/Sierra"
   },
   {
+    title: "Haroval",
+    description: "A modern, professional flashcard application with multiple authentication options, deck management, study mode, and sharing capabilities.",
+    tech: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Vercel"],
+    link: "https://github.com/nocturnal625/haroval"
+  },
+  {
     title: "CursorStrike",
     description: "A fun and interactive aim training game. Test your precision, reaction time, and build your aiming skills with multiple game modes and exciting power-ups!",
     tech: ["JavaScript", "HTML5 Canvas", "CSS3", "Node.js", "Express", "Vercel"],
