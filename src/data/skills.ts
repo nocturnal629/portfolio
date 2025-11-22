@@ -1,11 +1,11 @@
 import { SkillCategory } from '@/types';
 import { DiPython, DiJavascript1, DiReact, DiNodejs, DiMongodb, DiLinux, DiRedis, DiPostgresql } from 'react-icons/di';
-import { SiTypescript, SiGraphql, SiNextdotjs, SiFastapi, SiFlask, SiSupabase, SiAmazon, SiGooglecloud, SiGit, SiDocker, SiKubernetes } from 'react-icons/si';
+import { SiTypescript, SiGraphql, SiNextdotjs, SiFastapi, SiFlask, SiSupabase, SiAmazon, SiGooglecloud, SiGit, SiDocker, SiKubernetes, SiWordpress } from 'react-icons/si';
 import { FaDatabase } from "react-icons/fa";
 import { AiFillApi } from 'react-icons/ai';
 import { FaTools } from 'react-icons/fa';
 import { BsCodeSlash, BsDatabase, BsCloud, BsGear } from 'react-icons/bs';
-import { MdDevices } from 'react-icons/md';
+import { MdDevices, MdWeb } from 'react-icons/md';
 
 export const skills: SkillCategory[] = [
   {
@@ -55,6 +55,14 @@ export const skills: SkillCategory[] = [
       { name: "Linux Servers", icon: DiLinux },
       { name: "AWS", icon: SiAmazon },
       { name: "GCP", icon: SiGooglecloud }
+    ]
+  },
+  {
+    name: "CMS & Web Platforms",
+    icon: MdWeb,
+    skills: [
+      { name: "WordPress", icon: SiWordpress },
+      { name: "Elementor", icon: MdDevices }
     ]
   },
   {
