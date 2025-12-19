@@ -17,24 +17,24 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'nocturnal625',
-  description: 'AI/ML Engineer',
+  title: 'nocturnal625 - Python Developer Portfolio',
+  description: 'Python Developer specializing in Python, FastAPI, React, and TypeScript. Building scalable backend services and modern web applications.',
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',
     apple: '/favicon.png',
   },
   openGraph: {
-    title: 'Portfolio',
-    description: 'AI/ML Engineer',
+    title: 'nocturnal625 - Python Developer Portfolio',
+    description: 'Python Developer specializing in Python, FastAPI, React, and TypeScript. Building scalable backend services and modern web applications.',
     url: 'https://www.nocturnal625.dev',
     siteName: 'nocturnal625',
     images: [
       {
         url: 'https://www.nocturnal625.dev/favicon.png',
-        width: 512,
-        height: 512,
-        alt: 'nocturnal625',
+        width: 1200,
+        height: 630,
+        alt: 'nocturnal625 - Python Developer',
         type: 'image/png',
       },
     ],
@@ -43,15 +43,15 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'nocturnal625',
-    description: 'AI/ML Engineer',
+    title: 'nocturnal625 - Python Developer Portfolio',
+    description: 'Python Developer specializing in Python, FastAPI, React, and TypeScript. Building scalable backend services and modern web applications.',
     site: '@nocturnal625',
     creator: '@nocturnal625',
     images: ['https://www.nocturnal625.dev/favicon.png'],
   },
   other: {
-    'og:image:width': '512',
-    'og:image:height': '512',
+    'og:image:width': '1200',
+    'og:image:height': '630',
     'og:image:type': 'image/png',
   },
 };
