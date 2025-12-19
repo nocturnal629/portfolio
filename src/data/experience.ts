@@ -5,12 +5,14 @@ export const experiences: Experience[] = [
     title: "AI/ML Engineer",
     company: "Accenture",
     period: "Dec 2025 - Present",
+    logo: "/logos/accenture.png",
     responsibilities: []
   },
   {
     title: "Python Backend Developer",
     company: "FiberFin",
     period: "Aug 2025 - Oct 2025",
+    logo: "/logos/fiberfin.png",
     responsibilities: [
       "Architected data workflows with SQLAlchemy ORM and standardized API responses",
       "Implemented Alembic migrations for zero-downtime database updates",
@@ -23,6 +25,7 @@ export const experiences: Experience[] = [
     title: "Software Developer",
     company: "Axie Infinity Limited",
     period: "Oct 2022 - Nov 2024",
+    logo: "/logos/axie-infinity.png",
     responsibilities: [
       "Built internal tools with Retool/Jira/Google Sheets/Discord Bot",
       "Automated Discord community engagement for 50K+ users via Python bots",
@@ -35,6 +38,7 @@ export const experiences: Experience[] = [
     title: "Technical and Game Support",
     company: "Axie Infinity Limited",
     period: "Aug 2021 - Oct 2022",
+    logo: "/logos/axie-infinity.png",
     responsibilities: [
       "Provided support to 30K+ players via Discord and Zendesk tickets",
       "Monitored and moderated Discord channels and servers, resolving technical issues and escalating complex cases to engineering teams",
