@@ -2,11 +2,15 @@ import { Experience } from '@/types';
 
 export const experiences: Experience[] = [
   {
-    title: "AI/ML Engineer",
+    title: "AI/ML & DevOps Engineer",
     company: "Accenture",
     period: "Dec 2025 - Present",
     logo: "/logos/accenture.png",
-    responsibilities: []
+    responsibilities: [
+      "Architected AWS environments using ECS, ECR, S3, and DynamoDB; configured VPC, ALB, and PrivateLink for secure networking to support an AI-assisted content moderation platform",
+      "Designed FastAPI endpoints and scalable database schemas powering content upload and review workflows",
+      "Managed IAM roles and permissions and established team development environments via AWS CodeCommit for the moderation platform's engineering team"
+    ]
   },
   {
     title: "Python Backend Developer",
