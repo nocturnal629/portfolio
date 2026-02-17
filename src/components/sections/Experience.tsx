@@ -32,14 +32,29 @@ const Experience: React.FC = () => {
                     <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">{exp.title}</h3>
                     <div className="text-teal-600 dark:text-teal-400 font-medium">{exp.period}</div>
                   </div>
-                  <div className="text-lg mb-3 text-gray-600 dark:text-gray-300">{exp.company}</div>
+                  <div className="text-lg text-gray-600 dark:text-gray-300">{exp.company}</div>
                 </div>
               </div>
-              <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300">
-                {exp.responsibilities?.map((resp, i) => (
-                  <li key={i}>{resp}</li>
-                ))}
-              </ul>
+              {exp.roles
+                ? exp.roles.map((role) => (
+                    <div key={role.label} className="mt-3">
+                      <div className="mb-1 text-sm font-semibold text-gray-700 dark:text-gray-300">
+                        {role.label}
+                      </div>
+                      <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300">
+                        {role.responsibilities.map((resp, i) => (
+                          <li key={i}>{resp}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))
+                : exp.responsibilities && (
+                    <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300">
+                      {exp.responsibilities.map((resp, i) => (
+                        <li key={i}>{resp}</li>
+                      ))}
+                    </ul>
+                  )}
             </div>
           ))}
         </div>

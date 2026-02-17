@@ -2,14 +2,24 @@ import { Experience } from '@/types';
 
 export const experiences: Experience[] = [
   {
-    title: "AI/ML & DevOps Engineer",
+    title: "AI/ML Engineer",
     company: "Accenture",
     period: "Dec 2025 - Present",
     logo: "/logos/accenture.png",
-    responsibilities: [
-      "Architected AWS environments using ECS, ECR, S3, and DynamoDB; configured VPC, ALB, and PrivateLink for secure networking to support an AI-assisted content moderation platform",
-      "Designed FastAPI endpoints and scalable database schemas powering content upload and review workflows",
-      "Managed IAM roles and permissions and established team development environments via AWS CodeCommit for the moderation platform's engineering team"
+    roles: [
+      {
+        label: "[Backend & DevOps Engineer]",
+        responsibilities: [
+          "Architected and designed AWS infrastructure for AI-assisted content moderation platform using ECS, ECR, S3, DynamoDB, VPC, ALB, CloudWatch, Secrets Manager, CloudFront, and configured IAM roles, permissions, and team development environments via AWS CodeCommit",
+          "Developed FastAPI backend services and scalable database schemas for content upload and review workflows, and deployed both backend and frontend applications to ECS with comprehensive testing of deployments"
+        ]
+      },
+      {
+        label: "[Data Engineer]",
+        responsibilities: [
+          "To be updated"
+        ]
+      }
     ]
   },
   {
