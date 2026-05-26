@@ -19,6 +19,7 @@ export const experiences: Experience[] = [
         responsibilities: [
           "Developed a Python-Selenium web scraper to automate FAQ content extraction from E& B2B Portal across multiple support categories.",
           "Architected multi-step Agentic AI workflows on the amAIz and led KT sessions for fellow developers on how to utilize the amAIz for building and scaling agents.",
+          "Defined and maintained data mappings across API schemas and technical documentation, supporting sprint planning.",
           "To be updated"
         ]
       }
