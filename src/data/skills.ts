@@ -4,7 +4,7 @@ import { SiTypescript, SiGraphql, SiNextdotjs, SiFastapi, SiFlask, SiSupabase, S
 import { FaDatabase } from "react-icons/fa";
 import { AiFillApi } from 'react-icons/ai';
 import { FaTools } from 'react-icons/fa';
-import { BsCodeSlash, BsDatabase, BsCloud, BsGear } from 'react-icons/bs';
+import { BsCodeSlash, BsDatabase, BsCloud, BsGear, BsRobot } from 'react-icons/bs';
 import { MdDevices, MdWeb } from 'react-icons/md';
 
 export const skills: SkillCategory[] = [
@@ -38,6 +38,17 @@ export const skills: SkillCategory[] = [
     ]
   },
   {
+    name: "AI & Agents",
+    icon: BsRobot,
+    skills: [
+      "AWS Bedrock",
+      "Agentic AI",
+      "Multi-Agent Systems",
+      "Gemini API",
+      "Prompt Engineering"
+    ]
+  },
+  {
     name: "Databases",
     icon: BsDatabase,
     skills: [
@@ -45,7 +56,8 @@ export const skills: SkillCategory[] = [
       { name: "Redis", icon: DiRedis },
       { name: "PostgreSQL", icon: DiPostgresql },
       { name: "Supabase", icon: SiSupabase },
-      { name: "NeonDB", icon: FaDatabase }
+      { name: "NeonDB", icon: FaDatabase },
+      "DynamoDB"
     ]
   },
   {
