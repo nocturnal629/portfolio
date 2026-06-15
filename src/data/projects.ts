@@ -2,6 +2,11 @@ import { Project } from '@/types';
 
 export const projects: Project[] = [
   {
+    title: "Care AI Agent",
+    description: "An AI-powered virtual agent that handles customer care interactions end-to-end, from querying customer account data and service records to performing actions such as raising complaints, sending notifications, and escalating to live agents when needed.",
+    tech: ["Python", "LangGraph", "Agentic AI", "REST APIs", "Azure DevOps"]
+  },
+  {
     title: "Image AI",
     description: "An AI-powered content moderation platform that validates and filters user-submitted images related to the Kumamon mascot character using multi-agent workflows.",
     tech: ["Python", "FastAPI", "React", "AWS ECS", "AWS Bedrock", "DynamoDB", "S3", "CloudFront", "Docker", "Gemini API", "Claude API"],
