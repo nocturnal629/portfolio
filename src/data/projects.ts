@@ -13,6 +13,12 @@ export const projects: Project[] = [
     link: "http://kumamon-alb-1722743874.ap-northeast-1.elb.amazonaws.com/"
   },
   {
+    title: "Personal RAG",
+    description: "A single-user RAG application for chatting with your own notes, PDFs, bookmarks, and articles, with streamed answers and inline citations pointing to exact source chunks.",
+    tech: ["Next.js", "TypeScript", "Supabase", "pgvector", "Gemini API", "Tailwind CSS", "Vercel"],
+    link: "https://github.com/nocturnal625/personal-RAG"
+  },
+  {
     title: "AuthentiCute",
     description: "User Authentication and Management System that provides secure login, registration, and user profile management capabilities.",
     tech: ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy", "HTML", "Google OAuth", "Docker"],
