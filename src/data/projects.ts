@@ -19,6 +19,12 @@ export const projects: Project[] = [
     link: "https://github.com/nocturnal625/personal-RAG"
   },
   {
+    title: "Delubyo",
+    description: "An interactive text adventure game set in the Philippines during a typhoon disaster, where your choices shape the narrative in an immersive storytelling experience inspired by Lifeline and Firewatch.",
+    tech: ["TypeScript", "Vite", "OpenAI API", "Claude API", "Gemini API", "Vercel"],
+    link: "https://github.com/nocturnal625/Delubyo"
+  },
+  {
     title: "AuthentiCute",
     description: "User Authentication and Management System that provides secure login, registration, and user profile management capabilities.",
     tech: ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy", "HTML", "Google OAuth", "Docker"],
