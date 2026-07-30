@@ -5,6 +5,7 @@ import ThemeToggle from '@/components/ui/ThemeToggle';
 import Hero from '@/components/sections/Hero';
 import Projects from '@/components/sections/Projects';
 import Experience from '@/components/sections/Experience';
+import Certifications from '@/components/sections/Certifications';
 import About from '@/components/sections/About';
 import Footer from '@/components/sections/Footer';
 
@@ -16,7 +17,7 @@ export default function Home() {
     setIsMounted(true);
     
     const handleScroll = () => {
-      const sections = ['home', 'projects', 'experience', 'about'];
+      const sections = ['home', 'projects', 'experience', 'certifications', 'about'];
       
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -41,13 +42,14 @@ export default function Home() {
   
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
-      <div className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center">
+      <div className="fixed top-4 right-4 z-50 w-10 h-10 flex items-center justify-center">
         {isMounted && <ThemeToggle />}
       </div>
       
       <Hero activeSection={activeSection} onSectionChange={scrollToSection} />
       <Projects />
       <Experience />
+      <Certifications />
       <About />
       <Footer />
     </div>

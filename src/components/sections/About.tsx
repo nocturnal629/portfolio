@@ -4,7 +4,7 @@ import { skills } from '@/data/skills';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-20 px-4">
+    <section id="about" className="py-20 px-4 bg-white/60 dark:bg-slate-800/50">
       <div className="max-w-4xl mx-auto text-gray-800 dark:text-gray-200">
         <SectionTitle>About Me</SectionTitle>
         <div className="prose dark:prose-invert max-w-none">
