@@ -118,7 +118,7 @@ const ColorPicker: React.FC = () => {
         </button>
         
         {isOpen && (
-          <div className="absolute bottom-11 left-0 bg-white dark:bg-slate-800 p-4 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 w-56">
+          <div className="absolute bottom-11 left-0 bg-gradient-to-br from-white to-sky-100 dark:from-slate-800 dark:to-slate-800 p-4 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 w-56">
             <div className="text-sm font-medium mb-2 text-gray-800 dark:text-gray-200">Theme Colors</div>
             <div className="grid grid-cols-4 gap-2">
               {colorOptions.map((color) => (

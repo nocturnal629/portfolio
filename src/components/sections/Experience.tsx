@@ -5,15 +5,15 @@ import { experiences } from '@/data/experience';
 
 const Experience: React.FC = () => {
   return (
-    <section id="experience" className="py-20 px-4 bg-gray-50 dark:bg-slate-800/50">
+    <section id="experience" className="py-20 px-4 bg-white/60 dark:bg-slate-800/50">
       <div className="max-w-4xl mx-auto text-gray-800 dark:text-gray-200">
         <SectionTitle>Work Experience</SectionTitle>
         <div className="space-y-8">
           {experiences.map((exp, index) => (
             <div 
               key={index}
-              className="p-6 rounded-lg shadow-sm bg-white hover:shadow-md transition-shadow
-                        dark:bg-slate-800 dark:border-slate-700"
+              className="p-6 rounded-lg shadow-sm bg-gradient-to-br from-white to-sky-100 border border-slate-200 hover:shadow-md transition-shadow
+                        dark:from-slate-800 dark:to-slate-800 dark:border-slate-700"
             >
               <div className="flex gap-4 mb-4">
                 {exp.logo && (

@@ -95,7 +95,7 @@ function SecretGamingProfiles(): React.ReactNode {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4" onClick={closePopup}>
       <div 
-        className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-xl max-w-md w-full transform transition-all"
+        className="bg-gradient-to-br from-white to-sky-100 dark:from-slate-800 dark:to-slate-800 p-6 rounded-lg shadow-xl max-w-md w-full transform transition-all"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center mb-6">
