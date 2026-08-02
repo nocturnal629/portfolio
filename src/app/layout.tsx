@@ -17,16 +17,16 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'nocturnal625 - AI/ML Engineer Portfolio',
-  description: 'AI/ML Engineer specializing in Python, FastAPI, React, and TypeScript. Building scalable backend services and modern web applications.',
+  title: 'nocturnal625 - Full Stack LLM Developer Portfolio',
+  description: 'Full Stack LLM Developer specializing in Python, FastAPI, React, and TypeScript. Building scalable backend services and modern web applications.',
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',
     apple: '/favicon.png',
   },
   openGraph: {
-    title: 'nocturnal625 - AI/ML Engineer Portfolio',
-    description: 'AI/ML Engineer specializing in Python, FastAPI, React, and TypeScript. Building scalable backend services and modern web applications.',
+    title: 'nocturnal625 - Full Stack LLM Developer Portfolio',
+    description: 'Full Stack LLM Developer specializing in Python, FastAPI, React, and TypeScript. Building scalable backend services and modern web applications.',
     url: 'https://www.nocturnal625.dev',
     siteName: 'nocturnal625',
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
         url: 'https://www.nocturnal625.dev/favicon.png',
         width: 1200,
         height: 630,
-        alt: 'nocturnal625 - AI/ML Engineer',
+        alt: 'nocturnal625 - Full Stack LLM Developer',
         type: 'image/png',
       },
     ],
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'nocturnal625 - AI/ML Engineer Portfolio',
-    description: 'AI/ML Engineer specializing in Python, FastAPI, React, and TypeScript. Building scalable backend services and modern web applications.',
+    title: 'nocturnal625 - Full Stack LLM Developer Portfolio',
+    description: 'Full Stack LLM Developer specializing in Python, FastAPI, React, and TypeScript. Building scalable backend services and modern web applications.',
     site: '@nocturnal625',
     creator: '@nocturnal625',
     images: ['https://www.nocturnal625.dev/favicon.png'],
