@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaDiscord, FaEnvelope } from 'react-icons/fa';
 import { NavItem } from '@/types';
+import nocturnal625Title from '@/components/features/nocturnal625Title';
 
 interface HeroProps {
   activeSection: string;
@@ -19,13 +20,8 @@ const Hero: React.FC<HeroProps> = ({ activeSection, onSectionChange }) => {
   return (
     <section id="home" className="flex items-center justify-center min-h-screen">
       <div className="text-center max-w-2xl px-4">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 group relative tracking-wider">
-          nocturnal625
-          <span className="absolute opacity-0 group-hover:opacity-25 transition-opacity duration-800 delay-1000 text-xs whitespace-nowrap left-full ml-2 bottom-1/2 transform translate-y-1/2 text-teal-600 dark:text-teal-400 normal-case">
-            [type: nocturnal625]
-          </span>
-        </h1>
-        <p className="text-xl mb-4 text-gray-800 dark:text-gray-200">AI/ML Engineer</p>
+        <nocturnal625Title />
+        <p className="text-xl mb-4 text-gray-800 dark:text-gray-200">Full Stack LLM Developer</p>
         <p className="mb-8 text-gray-600 dark:text-gray-400">Metropolitan Manila, Philippines</p>
         
         <div className="flex justify-center space-x-6 mb-12">
