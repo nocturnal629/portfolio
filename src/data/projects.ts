@@ -25,10 +25,10 @@ export const projects: Project[] = [
     link: "https://github.com/nocturnal625/Delubyo"
   },
   {
-    title: "AuthentiCute",
-    description: "User Authentication and Management System that provides secure login, registration, and user profile management capabilities.",
-    tech: ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy", "HTML", "Google OAuth", "Docker"],
-    link: "https://github.com/nocturnal625/AuthentiCute"
+    title: "Local LLM Runtime",
+    description: "General-purpose infrastructure for running LLMs locally on a GPU, exposing a provider-swappable LLMClient abstraction and a FastAPI HTTP layer — designed as a reusable foundation for local RAG pipelines and agent projects.",
+    tech: ["Python", "FastAPI", "Ollama", "Pydantic", "NVIDIA CUDA"],
+    link: "https://github.com/nocturnal625/local-LLM-runtime"
   },
   {
     title: "Wild Forest Community API",

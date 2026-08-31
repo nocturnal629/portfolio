@@ -21,7 +21,7 @@ export const experiences: Experience[] = [
           "Architected multi-step Agentic AI workflows on the amAIz and led KT sessions for fellow developers on how to utilize the amAIz for building and scaling agents.",
           "Defined and maintained data mappings across API schemas and technical documentation, supporting sprint planning.",
           "Coordinated and tracked System Integration Testing (SIT) across multiple backend systems, documenting blockers, escalating integration issues, and monitoring end-to-end API response coverage across testing layers.",
-          "Debugged and resolved agent behavior and logic defects during pre-UAT testing to improve response accuracy and escalation handling."
+          "Diagnosed and resolved production and UAT defects in AI agent workflows, improving response accuracy, escalation handling, and system reliability"
         ]
       }
     ]
