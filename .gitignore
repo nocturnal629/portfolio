@@ -138,3 +138,4 @@ yarn-error.log
 .vscode/
 .idea/
 .vercel
+.env*.local
