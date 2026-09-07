@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaDiscord, FaEnvelope } from 'react-icons/fa';
 import { NavItem } from '@/types';
 import nocturnal625Title from '@/components/features/nocturnal625Title';
+import IdeaSubmission from '@/components/features/IdeaSubmission';
 
 interface HeroProps {
   activeSection: string;
@@ -62,21 +63,23 @@ const Hero: React.FC<HeroProps> = ({ activeSection, onSectionChange }) => {
           </Link>
         </div>
         
-        <div className="flex justify-center space-x-8">
+        <nav className="flex flex-wrap justify-center gap-2 sm:gap-3">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => onSectionChange(item.id)}
-              className={`text-lg capitalize transition-colors ${
-                activeSection === item.id 
-                  ? 'text-teal-600 dark:text-teal-400 font-medium' 
-                  : 'text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400'
+              className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border text-sm sm:text-lg capitalize transition-colors ${
+                activeSection === item.id
+                  ? 'border-teal-600/40 bg-teal-600/10 text-teal-600 font-medium dark:border-teal-400/40 dark:bg-teal-400/10 dark:text-teal-400'
+                  : 'border-transparent text-gray-600 hover:border-teal-600/30 hover:bg-teal-600/10 hover:text-teal-600 dark:text-gray-400 dark:hover:border-teal-400/30 dark:hover:bg-teal-400/10 dark:hover:text-teal-400'
               }`}
             >
               {item.label}
             </button>
           ))}
-        </div>
+        </nav>
+
+        <IdeaSubmission />
       </div>
     </section>
   );
