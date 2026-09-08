@@ -201,9 +201,9 @@ const IdeaSubmission: React.FC = () => {
               >
                 submit_idea()
               </button>
-              <span className="text-slate-500 hidden sm:inline">
+              <span className="text-slate-500">
                 {' '}
-                # or click for the full form (title, description, name)
+                # or click this
               </span>
             </p>
           </div>
