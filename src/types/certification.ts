@@ -4,4 +4,5 @@ export interface Certification {
   logo: string;
   date?: string;
   link?: string;
+  logoClassName?: string;
 }

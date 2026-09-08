@@ -18,7 +18,7 @@ const Certifications: React.FC = () => {
                     alt={cert.name}
                     width={96}
                     height={96}
-                    className="object-contain"
+                    className={`object-contain ${cert.logoClassName ?? ''}`}
                   />
                 </div>
                 <div className="text-center">
