@@ -30,7 +30,7 @@ function SecretGamingProfiles(): React.ReactNode {
     },
     { 
       platform: 'Valorant', 
-      id: 'nocturnal625#bia',
+      id: 'nocturnal625#nutty',
       icon: <SiRiotgames className="h-6 w-6 text-red-600" />,
       color: 'bg-red-100 dark:bg-red-900'
     },
