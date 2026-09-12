@@ -65,12 +65,12 @@ html.has-theme.dark body {
   border-color: var(--theme-color);
 }
 
-html.has-theme .text-teal-400, 
-html.has-theme .text-teal-500, 
+html.has-theme .text-teal-400,
+html.has-theme .text-teal-500,
 html.has-theme .text-teal-600,
 html.has-theme .text-teal-700,
 html.has-theme .text-teal-800 {
-  color: var(--theme-color);
+  color: var(--theme-color-dark);
 }
 
 html.has-theme .dark .text-teal-200,
@@ -85,10 +85,10 @@ html.has-theme .bg-teal-100 {
   background-color: rgba(var(--theme-color-rgb, 20, 184, 166), 0.1);
 }
 
-html.has-theme .bg-teal-500, 
+html.has-theme .bg-teal-500,
 html.has-theme .bg-teal-600,
 html.has-theme .bg-teal-700 {
-  background-color: var(--theme-color);
+  background-color: var(--theme-color-dark);
 }
 
 html.has-theme .dark .bg-teal-400,

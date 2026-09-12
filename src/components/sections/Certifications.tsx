@@ -23,9 +23,9 @@ const Certifications: React.FC = () => {
                 </div>
                 <div className="text-center">
                   <h3 className="font-semibold text-gray-800 dark:text-gray-200">{cert.name}</h3>
-                  <p className="text-sm text-teal-600 dark:text-teal-400 mt-1">{cert.issuer}</p>
+                  <p className="text-sm text-teal-800 dark:text-teal-400 mt-1">{cert.issuer}</p>
                   {cert.date && (
-                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{cert.date}</p>
+                    <p className="text-sm text-gray-800 dark:text-gray-400 mt-1">{cert.date}</p>
                   )}
                 </div>
               </>

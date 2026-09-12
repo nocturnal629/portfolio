@@ -224,8 +224,8 @@ const IdeaSubmission: React.FC = () => {
           >
             {status === 'success' ? (
               <div className="text-center py-6">
-                <p className="text-lg font-medium text-teal-600 dark:text-teal-400 mb-2">Thanks for the idea!</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
+                <p className="text-lg font-medium text-teal-800 dark:text-teal-400 mb-2">Thanks for the idea!</p>
+                <p className="text-sm text-gray-800 dark:text-gray-400 mb-6">
                   I&apos;ll take a look and see what I can build.
                 </p>
                 <button
@@ -261,7 +261,7 @@ const IdeaSubmission: React.FC = () => {
                 />
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label className="block text-sm font-medium text-gray-800 dark:text-gray-300 mb-1">
                     Name
                   </label>
                   <input
@@ -275,7 +275,7 @@ const IdeaSubmission: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label className="block text-sm font-medium text-gray-800 dark:text-gray-300 mb-1">
                     Title <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -290,7 +290,7 @@ const IdeaSubmission: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label className="block text-sm font-medium text-gray-800 dark:text-gray-300 mb-1">
                     Description <span className="text-red-500">*</span>
                   </label>
                   <textarea
