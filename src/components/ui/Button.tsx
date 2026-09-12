@@ -20,7 +20,7 @@ const Button: React.FC<ButtonProps> = ({
   const variantStyles = {
     primary: "bg-teal-600 text-white hover:bg-teal-700 dark:bg-teal-500 dark:hover:bg-teal-600",
     secondary: "bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600",
-    outline: "border border-teal-600 text-teal-600 hover:bg-teal-50 dark:border-teal-400 dark:text-teal-400 dark:hover:bg-teal-900/30"
+    outline: "border border-teal-600 text-teal-800 hover:bg-teal-50 dark:border-teal-400 dark:text-teal-400 dark:hover:bg-teal-900/30"
   };
   
   const styles = `${baseStyles} ${variantStyles[variant]} ${className}`;

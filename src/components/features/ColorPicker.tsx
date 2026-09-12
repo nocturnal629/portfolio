@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { hexToRgb, rgbToHex, getReadableColorOnLight, getReadableColorOnDark } from '@/utils/color';
 
 const ColorPicker: React.FC = () => {
   const searchParams = useSearchParams();
@@ -80,17 +81,9 @@ const ColorPicker: React.FC = () => {
   const applyColorToDOM = (hexColor: string) => {
     const color = hexColor.startsWith('#') ? hexColor : `#${hexColor}`;
 
-    const hex = color.replace('#', '');
-    const fullHex = hex.length === 3 
-      ? hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2]
-      : hex;
-    
-    const r = parseInt(fullHex.substring(0, 2), 16);
-    const g = parseInt(fullHex.substring(2, 4), 16);
-    const b = parseInt(fullHex.substring(4, 6), 16);
-
-    const darkerColor = `rgb(${Math.max(0, r-40)}, ${Math.max(0, g-40)}, ${Math.max(0, b-40)})`;
-    const lighterColor = `rgb(${Math.min(255, r+40)}, ${Math.min(255, g+40)}, ${Math.min(255, b+40)})`;
+    const { r, g, b } = hexToRgb(color);
+    const darkerColor = rgbToHex(getReadableColorOnLight(color));
+    const lighterColor = rgbToHex(getReadableColorOnDark(color));
 
     document.documentElement.style.setProperty('--theme-color', color);
     document.documentElement.style.setProperty('--theme-color-dark', darkerColor);
@@ -138,7 +131,7 @@ const ColorPicker: React.FC = () => {
             </div>
             
             <div className="mt-3">
-              <label className="text-xs text-gray-600 dark:text-gray-400">Custom Color:</label>
+              <label className="text-xs text-gray-800 dark:text-gray-400">Custom Color:</label>
               <div className="flex mt-1">
                 <input
                   type="color"

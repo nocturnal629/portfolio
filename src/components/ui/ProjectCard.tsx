@@ -5,7 +5,7 @@ const ProjectCard: React.FC<Project> = ({ title, description, tech, link }) => {
   return (
     <div className="p-6 rounded-lg shadow-sm bg-gradient-to-br from-white to-sky-100 hover:shadow-lg transition-all duration-200 transform hover:-translate-y-1 border border-transparent hover:border-teal-300 dark:from-slate-800 dark:to-slate-800 dark:hover:border-teal-800">
       <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">{title}</h3>
-      <p className="text-gray-600 mb-4 dark:text-gray-300">{description}</p>
+      <p className="text-gray-800 mb-4 dark:text-gray-300">{description}</p>
       <div className="flex flex-wrap gap-2 mb-4">
         {tech.map((t) => (
           <span 
@@ -21,7 +21,7 @@ const ProjectCard: React.FC<Project> = ({ title, description, tech, link }) => {
           href={link} 
           target="_blank"
           rel="noopener noreferrer"
-          className="text-teal-600 hover:underline flex items-center gap-1 dark:text-teal-400"
+          className="text-teal-800 hover:underline flex items-center gap-1 dark:text-teal-400"
         >
           View Project <span aria-hidden="true">→</span>
         </a>
