@@ -25,7 +25,7 @@ const Hero: React.FC<HeroProps> = ({ activeSection, onSectionChange }) => {
             rel="noopener noreferrer"
             className="text-gray-800 hover:text-teal-800 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
           >
-            <FaGithub className="h-8 w-8" />
+            <FaGithub className="h-8 w-8" suppressHydrationWarning />
             <span className="sr-only">GitHub</span>
           </Link>
           <Link 
@@ -34,7 +34,7 @@ const Hero: React.FC<HeroProps> = ({ activeSection, onSectionChange }) => {
             rel="noopener noreferrer"
             className="text-blue-600 hover:text-teal-800 dark:text-blue-400 dark:hover:text-teal-400 transition-colors"
           >
-            <FaLinkedin className="h-8 w-8" />
+            <FaLinkedin className="h-8 w-8" suppressHydrationWarning />
             <span className="sr-only">LinkedIn</span>
           </Link>
           <Link 
@@ -43,7 +43,7 @@ const Hero: React.FC<HeroProps> = ({ activeSection, onSectionChange }) => {
             rel="noopener noreferrer"
             className="text-blue-600 hover:text-teal-800 dark:text-blue-400 dark:hover:text-teal-400 transition-colors"
           >
-            <FaDiscord className="h-8 w-8" />
+            <FaDiscord className="h-8 w-8" suppressHydrationWarning />
             <span className="sr-only">Discord</span>
           </Link>
           <Link 
@@ -51,7 +51,7 @@ const Hero: React.FC<HeroProps> = ({ activeSection, onSectionChange }) => {
             rel="noopener noreferrer"
             className="text-red-600 hover:text-teal-800 dark:text-red-400 dark:hover:text-teal-400 transition-colors"
           >
-            <FaEnvelope className="h-8 w-8" />
+            <FaEnvelope className="h-8 w-8" suppressHydrationWarning />
             <span className="sr-only">Email</span>
           </Link>
         </div>
