@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { hexToRgb, rgbToHex, getReadableColorOnLight, getReadableColorOnDark } from '@/utils/color';
+import { hexToRgb, rgbToHex, getReadableColorOnLight, getReadableColorOnDark, getPageTint, getCardTint, getDarkChipTint } from '@/utils/color';
 
 export default function ColorThemeProvider() {
   const searchParams = useSearchParams();
@@ -22,11 +22,17 @@ export default function ColorThemeProvider() {
       const { r, g, b } = hexToRgb(color);
       const darkerColor = rgbToHex(getReadableColorOnLight(color));
       const lighterColor = rgbToHex(getReadableColorOnDark(color));
+      const pageTint = rgbToHex(getPageTint(color));
+      const cardTint = rgbToHex(getCardTint(color));
+      const chipBgDark = rgbToHex(getDarkChipTint(color));
 
       document.documentElement.style.setProperty('--theme-color', color);
       document.documentElement.style.setProperty('--theme-color-dark', darkerColor);
       document.documentElement.style.setProperty('--theme-color-light', lighterColor);
       document.documentElement.style.setProperty('--theme-color-rgb', `${r}, ${g}, ${b}`);
+      document.documentElement.style.setProperty('--theme-chip-bg-dark', chipBgDark);
+      document.documentElement.style.setProperty('--theme-page-tint', pageTint);
+      document.documentElement.style.setProperty('--theme-card-tint', cardTint);
 
       document.documentElement.style.setProperty('--color-primary', color);
       document.documentElement.classList.add('has-theme');
@@ -37,6 +43,9 @@ export default function ColorThemeProvider() {
       document.documentElement.style.removeProperty('--theme-color-dark');
       document.documentElement.style.removeProperty('--theme-color-light');
       document.documentElement.style.removeProperty('--theme-color-rgb');
+      document.documentElement.style.removeProperty('--theme-page-tint');
+      document.documentElement.style.removeProperty('--theme-card-tint');
+      document.documentElement.style.removeProperty('--theme-chip-bg-dark');
       document.documentElement.classList.remove('has-theme');
     }
 
