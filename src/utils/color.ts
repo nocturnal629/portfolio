@@ -4,8 +4,8 @@ interface RGB {
   b: number;
 }
 
-const LIGHT_PAGE_BG: RGB = { r: 220, g: 229, b: 240 }; // #dce5f0
-const DARK_PAGE_BG: RGB = { r: 15, g: 23, b: 42 }; // #0f172a
+const LIGHT_PAGE_BG: RGB = { r: 207, g: 220, b: 235 }; // #cfdceb
+const DARK_CARD_BG: RGB = { r: 30, g: 41, b: 59 }; // #1e293b (slate-800) — the lightest surface dark-mode text sits on, so passing here also passes on the darker page background
 const MIN_CONTRAST = 4.5;
 
 export function hexToRgb(hex: string): RGB {
@@ -110,7 +110,29 @@ export function getReadableColorOnLight(hex: string): RGB {
   return adjustForContrast(hex, LIGHT_PAGE_BG, 'darken');
 }
 
-// Lightens `hex` (preserving hue/saturation) until it reads clearly against the dark-mode page background.
+// Lightens `hex` (preserving hue/saturation) until it reads clearly against dark-mode card surfaces.
 export function getReadableColorOnDark(hex: string): RGB {
-  return adjustForContrast(hex, DARK_PAGE_BG, 'lighten');
+  return adjustForContrast(hex, DARK_CARD_BG, 'lighten');
+}
+
+function tintFromHue(hex: string, lightness: number, maxSaturation: number): RGB {
+  const [h, s] = rgbToHsl(hexToRgb(hex));
+  return hslToRgb(h, Math.min(s, maxSaturation), lightness);
+}
+
+// A soft pastel of `hex`'s hue at the page background's usual lightness, for a themed light-mode page backdrop.
+export function getPageTint(hex: string): RGB {
+  return tintFromHue(hex, 0.87, 0.45);
+}
+
+// A slightly deeper, more saturated pastel of `hex`'s hue for card gradient endpoints, so cards still read as raised above the tinted page.
+export function getCardTint(hex: string): RGB {
+  return tintFromHue(hex, 0.82, 0.6);
+}
+
+// A fixed, low-lightness tint of `hex`'s hue for dark-mode badge/chip fills. Deliberately not contrast-adjusted
+// relative to any specific text color — it just needs to stay dark enough that getReadableColorOnDark's output
+// (validated against DARK_CARD_BG, a lighter surface than this) reliably contrasts against it too.
+export function getDarkChipTint(hex: string): RGB {
+  return tintFromHue(hex, 0.16, 0.6);
 }

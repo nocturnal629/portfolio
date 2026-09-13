@@ -32,7 +32,7 @@ const Certifications: React.FC = () => {
             );
 
             const className =
-              'flex flex-col items-center gap-4 p-6 rounded-lg shadow-sm bg-gradient-to-br from-white to-sky-100 hover:shadow-md transition-shadow dark:from-slate-800 dark:to-slate-800 dark:border-slate-700';
+              'flex flex-col items-center gap-4 p-6 rounded-lg shadow-sm bg-gradient-to-br from-white to-sky-200 hover:shadow-md transition-shadow dark:from-slate-800 dark:to-slate-800 dark:border-slate-700';
 
             return cert.link ? (
               <a key={index} href={cert.link} target="_blank" rel="noopener noreferrer" className={className}>
