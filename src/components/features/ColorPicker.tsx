@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { hexToRgb, rgbToHex, getReadableColorOnLight, getReadableColorOnDark } from '@/utils/color';
+import { hexToRgb, rgbToHex, getReadableColorOnLight, getReadableColorOnDark, getPageTint, getCardTint, getDarkChipTint } from '@/utils/color';
 
 const ColorPicker: React.FC = () => {
   const searchParams = useSearchParams();
@@ -70,6 +70,9 @@ const ColorPicker: React.FC = () => {
       document.documentElement.style.removeProperty('--theme-color-dark');
       document.documentElement.style.removeProperty('--theme-color-light');
       document.documentElement.style.removeProperty('--theme-color-rgb');
+      document.documentElement.style.removeProperty('--theme-page-tint');
+      document.documentElement.style.removeProperty('--theme-card-tint');
+      document.documentElement.style.removeProperty('--theme-chip-bg-dark');
     } else {
       applyColorToDOM(color);
     }
@@ -84,11 +87,17 @@ const ColorPicker: React.FC = () => {
     const { r, g, b } = hexToRgb(color);
     const darkerColor = rgbToHex(getReadableColorOnLight(color));
     const lighterColor = rgbToHex(getReadableColorOnDark(color));
+    const pageTint = rgbToHex(getPageTint(color));
+    const cardTint = rgbToHex(getCardTint(color));
+    const chipBgDark = rgbToHex(getDarkChipTint(color));
 
     document.documentElement.style.setProperty('--theme-color', color);
     document.documentElement.style.setProperty('--theme-color-dark', darkerColor);
     document.documentElement.style.setProperty('--theme-color-light', lighterColor);
     document.documentElement.style.setProperty('--theme-color-rgb', `${r}, ${g}, ${b}`);
+    document.documentElement.style.setProperty('--theme-chip-bg-dark', chipBgDark);
+    document.documentElement.style.setProperty('--theme-page-tint', pageTint);
+    document.documentElement.style.setProperty('--theme-card-tint', cardTint);
     document.documentElement.classList.add('has-theme');
   };
 
@@ -111,7 +120,7 @@ const ColorPicker: React.FC = () => {
         </button>
         
         {isOpen && (
-          <div className="absolute bottom-11 left-0 bg-gradient-to-br from-white to-sky-100 dark:from-slate-800 dark:to-slate-800 p-4 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 w-56">
+          <div className="absolute bottom-11 left-0 bg-gradient-to-br from-white to-sky-200 dark:from-slate-800 dark:to-slate-800 p-4 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 w-56">
             <div className="text-sm font-medium mb-2 text-gray-800 dark:text-gray-200">Theme Colors</div>
             <div className="grid grid-cols-4 gap-2">
               {colorOptions.map((color) => (
