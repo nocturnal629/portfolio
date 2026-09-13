@@ -176,7 +176,7 @@ const IdeaSubmission: React.FC = () => {
                   <span className="text-emerald-300">&quot;Thanks — got it!&quot;</span>
                   <span className="text-slate-400">)</span>
                 </p>
-                <p className="text-teal-400 mb-2">Thanks — got it. I&apos;ll take a look!</p>
+                <p className="text-theme-light mb-2">Thanks — got it. I&apos;ll take a look!</p>
                 <button
                   type="button"
                   onClick={resetQuick}

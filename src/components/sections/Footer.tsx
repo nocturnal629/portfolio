@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="py-8 text-center text-gray-800 dark:text-gray-400 text-sm">
+    <footer className="py-4 text-center text-gray-800 dark:text-gray-400 text-sm">
       <p>© {new Date().getFullYear()} nocturnal625. All rights reserved.</p>
       {/* Invisible to real visitors and skipped by screen readers; only a bot
           that blindly crawls every <a href> will ever request this. Middleware
