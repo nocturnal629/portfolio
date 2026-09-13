@@ -19,6 +19,7 @@ const Projects: React.FC = () => {
               description={project.description}
               tech={project.tech}
               link={project.link}
+              image={project.image}
             />
           ))}
         </div>
