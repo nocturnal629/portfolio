@@ -1,3 +1,4 @@
+import { put } from '@vercel/blob';
 import { NextResponse, type NextFetchEvent, type NextRequest } from 'next/server';
 
 // Paths that get a fake dotenv file instead of a 404 — these are what
@@ -130,23 +131,22 @@ function logHoneypotHit(request: NextRequest, event: NextFetchEvent, hitType: 'e
   // console.warn (not .log) so hits stand out in the Vercel Logs level filter.
   console.warn('[honeypot]', JSON.stringify(details));
 
-  const webhookUrl = process.env.HONEYPOT_WEBHOOK_URL;
-  if (!webhookUrl) return;
-
-  // Discord-compatible webhook body; Slack's incoming-webhook format also
-  // accepts a top-level "content" string, so this works for either.
-  const alert = fetch(webhookUrl, {
-    method: 'POST',
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({
-      content: `🍯 Honeypot hit: \`${details.method} ${details.path}\` from \`${details.ip}\` — ${details.userAgent}`,
-    }),
+  // Compiled record for offline IP/UA lookups (abuse databases, geo-IP, etc.)
+  // and the separate world-map dashboard project — not read by this app.
+  const record = put(`honeypot/${Date.now()}-${hitType}.json`, JSON.stringify(details, null, 2), {
+    access: 'private',
+    addRandomSuffix: true,
+    contentType: 'application/json',
+    // Force the static read-write token: when a Vercel OIDC token is also
+    // present in the environment, the SDK prefers it, which fails outside
+    // an actual Vercel deployment (e.g. local dev with pulled prod vars).
+    token: process.env.BLOB_READ_WRITE_TOKEN,
   }).catch((error) => {
-    console.error('[honeypot] webhook delivery failed:', error);
+    console.error('[honeypot] blob write failed:', error);
   });
 
-  // Don't block the response on the webhook call.
-  event.waitUntil(alert);
+  // Don't block the response on the blob write.
+  event.waitUntil(record);
 }
 
 export function middleware(request: NextRequest, event: NextFetchEvent) {
