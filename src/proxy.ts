@@ -149,7 +149,7 @@ function logHoneypotHit(request: NextRequest, event: NextFetchEvent, hitType: 'e
   event.waitUntil(record);
 }
 
-export function middleware(request: NextRequest, event: NextFetchEvent) {
+export function proxy(request: NextRequest, event: NextFetchEvent) {
   const { pathname } = request.nextUrl;
 
   if (ENV_DECOY_PATHS.has(pathname)) {

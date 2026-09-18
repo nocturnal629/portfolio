@@ -40,7 +40,7 @@ All user-facing content lives in `src/data/*.ts` as plain TypeScript arrays. To 
 
 Theme-dependent components use an `isMounted` guard before rendering to prevent hydration mismatches.
 
-### Middleware honeypot (`src/middleware.ts`)
+### Proxy honeypot (`src/proxy.ts`)
 
 The middleware intercepts bot reconnaissance probes. **Critical constraint**: the exported `config.matcher` array must stay exactly in sync with `ENV_DECOY_PATH_LIST` and `RECON_PROBE_PATHS` — Next.js statically parses `config.matcher` at build time so it cannot be a spread or reference. A dev-mode check warns on drift. When adding a new trap path, add it in all three places.
 
