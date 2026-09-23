@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with Next.js and TypeScript. This project showcases personal projects, work experience, skills, and provides an interactive way for visitors to learn more about the developer.
 
-**[🌐 Live Site](https://www.nocturnal625.dev/)**
+**[🌐 Live Site](https://www..dev/)**
 
 ## ✨ Features
 
