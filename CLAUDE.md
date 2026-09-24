@@ -24,7 +24,7 @@ uvicorn app.main:app --reload --port 8000  # interactive Swagger UI at /docs
 ### Component organization
 
 `src/components/` is split into three layers:
-- `features/` — interactive/stateful components mounted globally in `layout.tsx` (ThemeProvider, ColorThemeProvider, ScrollProgress, FloatingElements, ColorPicker, KeyboardHint, SecretGamingProfiles)
+- `features/` — interactive/stateful components mounted globally in `layout.tsx` (ThemeProvider, ColorThemeProvider, ScrollProgress, FloatingElements, ColorPicker)
 - `sections/` — the visible page sections rendered in `page.tsx` (Hero, Projects, Experience, Certifications, About, Footer)
 - `ui/` — stateless primitives (Button, ProjectCard, SectionTitle, ThemeToggle)
 

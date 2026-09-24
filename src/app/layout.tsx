@@ -3,10 +3,8 @@ import './globals.css';
 import { Analytics } from "@vercel/analytics/react";
 import ScrollProgress from '@/components/features/ScrollProgress';
 import FloatingElements from '@/components/features/FloatingElements';
-import KeyboardHint from '@/components/features/KeyboardHint';
 import ThemeProvider from '@/components/features/ThemeProvider';
 import ColorThemeProvider from '@/components/features/ColorThemeProvider';
-import SecretGamingProfiles from '@/components/features/SecretGamingProfiles';
 import ColorPicker from '@/components/features/ColorPicker';
 import { Metadata, Viewport } from 'next';
 
@@ -71,8 +69,6 @@ export default function RootLayout({
         
         <ScrollProgress />
         <FloatingElements />
-        <SecretGamingProfiles />
-        <KeyboardHint />
         <Suspense fallback={null}>
           <ColorPicker />
         </Suspense>

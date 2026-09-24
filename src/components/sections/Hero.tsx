@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaDiscord, FaEnvelope } from 'react-icons/fa';
-import nocturnal625Title from '@/components/features/nocturnal625Title';
+import HeroTitle from '@/components/features/HeroTitle';
 import IdeaSubmission from '@/components/features/IdeaSubmission';
 import { navItems } from '@/data/navigation';
 
@@ -14,7 +14,7 @@ const Hero: React.FC<HeroProps> = ({ activeSection, onSectionChange }) => {
   return (
     <section id="home" className="flex items-center justify-center min-h-screen">
       <div className="text-center max-w-2xl px-4">
-        <nocturnal625Title />
+        <HeroTitle />
         <p className="text-xl mb-4 text-gray-800 dark:text-gray-200">Full Stack LLM Developer</p>
         <p className="mb-8 text-gray-800 dark:text-gray-400">Metropolitan Manila, Philippines</p>
         

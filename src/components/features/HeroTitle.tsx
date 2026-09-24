@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef } from 'react';
 
-const ORIGINAL = 'nocturnal625';
+const DISPLAY_NAME = 'Aldrian A';
 
 interface Particle {
   x: number;
@@ -14,7 +14,7 @@ interface Particle {
   color: string;
 }
 
-const nocturnal625Title: React.FC = () => {
+const HeroTitle: React.FC = () => {
   const containerRef = useRef<HTMLHeadingElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const letterSpansRef = useRef<(HTMLSpanElement | null)[]>([]);
@@ -201,10 +201,10 @@ const nocturnal625Title: React.FC = () => {
       />
       <h1
         ref={containerRef}
-        aria-label="nocturnal625"
-        className="text-5xl md:text-7xl font-bold mb-6 group relative tracking-wider cursor-crosshair select-none"
+        aria-label={DISPLAY_NAME}
+        className="text-5xl md:text-7xl font-bold mb-6 relative tracking-wider cursor-crosshair select-none"
       >
-        {ORIGINAL.split('').map((ch, i) => (
+        {DISPLAY_NAME.split('').map((ch, i) => (
           <span
             key={i}
             ref={el => { letterSpansRef.current[i] = el; }}
@@ -214,15 +214,12 @@ const nocturnal625Title: React.FC = () => {
                 'transform 0.12s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.12s ease, text-shadow 0.12s ease',
             }}
           >
-            {ch}
+            {ch === ' ' ? ' ' : ch}
           </span>
         ))}
-        <span className="absolute opacity-0 group-hover:opacity-25 transition-opacity duration-800 delay-1000 text-xs whitespace-nowrap left-full ml-2 bottom-1/2 transform translate-y-1/2 text-teal-600 dark:text-teal-400 normal-case">
-          [type: nocturnal625]
-        </span>
       </h1>
     </>
   );
 };
 
-export default nocturnal625Title;
+export default HeroTitle;
