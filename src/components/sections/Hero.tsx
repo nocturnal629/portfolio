@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaDiscord, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import HeroTitle from '@/components/features/HeroTitle';
 import IdeaSubmission from '@/components/features/IdeaSubmission';
 import { navItems } from '@/data/navigation';
@@ -36,23 +36,6 @@ const Hero: React.FC<HeroProps> = ({ activeSection, onSectionChange }) => {
           >
             <FaLinkedin className="h-8 w-8" suppressHydrationWarning />
             <span className="sr-only">LinkedIn</span>
-          </Link>
-          <Link 
-            href="https://discord.com/users/904940122468909138" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:text-teal-800 dark:text-blue-400 dark:hover:text-teal-400 transition-colors"
-          >
-            <FaDiscord className="h-8 w-8" suppressHydrationWarning />
-            <span className="sr-only">Discord</span>
-          </Link>
-          <Link 
-            href="mailto:contact@aldrian-a.dev"
-            rel="noopener noreferrer"
-            className="text-red-600 hover:text-teal-800 dark:text-red-400 dark:hover:text-teal-400 transition-colors"
-          >
-            <FaEnvelope className="h-8 w-8" suppressHydrationWarning />
-            <span className="sr-only">Email</span>
           </Link>
         </div>
         
