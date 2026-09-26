@@ -18,7 +18,7 @@ const About: React.FC = () => {
             Before AI became central to my work, I spent two years at Axie Infinity building automation tools and supporting a 50K+ user community, then sharpened my backend skills at FiberFin with OAuth 2.0, multi-tenant RBAC, and zero-downtime database migrations. I care about clean, maintainable code and building things that actually solve problems.
           </p>
           <p className="text-lg mb-6 text-gray-800 dark:text-gray-300">
-            Outside of work, I tinker with robotics and explore cybersecurity as side interests — breaking and building things for fun. I also spend a lot of time in Valorant and League of Legends. If you&apos;re curious about my gaming profiles, try typing <span className="font-mono text-teal-800 dark:text-teal-400 font-medium">nocturnal625</span> on your keyboard. 🎮
+            Outside of work, I tinker with robotics and explore cybersecurity as side interests — breaking and building things for fun. I also spend a lot of time in Valorant and League of Legends.
           </p>
           
           <div className="mt-10">

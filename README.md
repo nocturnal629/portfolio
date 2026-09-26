@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with Next.js and TypeScript. This project showcases personal projects, work experience, skills, and provides an interactive way for visitors to learn more about the developer.
 
-**[🌐 Live Site](https://www..dev/)**
+**[🌐 Live Site](https://www.aldrian-a.dev/)**
 
 ## ✨ Features
 
@@ -11,7 +11,6 @@ A modern, responsive portfolio website built with Next.js and TypeScript. This p
 - **Project Showcase**: Display of personal projects with descriptions and tech stacks
 - **Experience Timeline**: Professional work history and experience
 - **About Section**: Personal introduction and skills overview
-- **Gaming Profiles**: Secret section for gaming achievements (Easter egg)
 - **Analytics**: Integrated Vercel Analytics for visitor tracking
 
 ## 🛠️ Tech Stack
@@ -26,7 +25,7 @@ A modern, responsive portfolio website built with Next.js and TypeScript. This p
 
 ## 🚀 Want to Use This as a Template?
 
-If you'd like to use this portfolio as a template for your own website, check out the **[`template` branch](https://github.com/nocturnal625/portfolio/tree/template)** which contains:
+If you'd like to use this portfolio as a template for your own website, check out the **[`template` branch](https://github.com/nocturnal629/portfolio/tree/template)** which contains:
 
 - Placeholder content instead of personal information
 - Detailed setup and customization instructions

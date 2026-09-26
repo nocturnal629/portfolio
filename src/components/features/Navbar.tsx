@@ -52,7 +52,7 @@ const Navbar: React.FC<NavbarProps> = ({
             className="hidden sm:block text-sm font-semibold tracking-wide text-gray-800 dark:text-gray-200 hover:text-teal-800 dark:hover:text-teal-400 transition-colors"
             tabIndex={visible ? 0 : -1}
           >
-            nocturnal625
+            Aldrian A
           </button>
 
           <div className="flex-1 flex flex-wrap justify-center gap-1 sm:gap-2">

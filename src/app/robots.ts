@@ -14,6 +14,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/private-backup/', '/internal-admin/', '/staff-portal/'],
       },
     ],
-    host: 'https://www.nocturnal625.dev',
+    host: 'https://www.aldrian-a.dev',
   };
 }

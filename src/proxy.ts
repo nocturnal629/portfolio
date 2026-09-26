@@ -93,7 +93,7 @@ function buildDecoyEnv(): string {
 
   return `# Production environment — DO NOT COMMIT
 NODE_ENV=production
-APP_URL=https://www.nocturnal625.dev
+APP_URL=https://www.aldrian-a.dev
 
 DATABASE_URL=postgres://admin:S9x!vQ2mN7pL@db.internal-prod.local:5432/app_production
 REDIS_URL=redis://default:kP2m!Rz8vQ@cache.internal-prod.local:6379
@@ -107,7 +107,7 @@ JWT_SECRET=f4b9e2d1c6a8470eae3b6d9c1a2e5f7b
 NEXTAUTH_SECRET=9f8a7d6c5b4a3e2d1c0b9a8f7e6d5c4b
 
 SMTP_HOST=smtp.mailprovider.com
-SMTP_USER=noreply@nocturnal625.dev
+SMTP_USER=noreply@aldrian-a.dev
 SMTP_PASSWORD=Winter2024!Mail
 ADMIN_PASSWORD=Tr0ub4dor&3Prod
 `;

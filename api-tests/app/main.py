@@ -22,7 +22,7 @@ from app.schemas import IdeaSubmissionRequest, IdeaSubmissionResponse
 NEXT_API_BASE_URL = os.environ.get("NEXT_API_BASE_URL", "http://localhost:3001")
 
 app = FastAPI(
-    title="nocturnal625 Portfolio — Idea Submission API (test harness)",
+    title="Aldrian A Portfolio — Idea Submission API (test harness)",
     description=(
         "Interactive documentation and live test client for the portfolio's "
         "idea-submission API. Every call made from this Swagger UI is "

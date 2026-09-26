@@ -20,7 +20,7 @@ const Hero: React.FC<HeroProps> = ({ activeSection, onSectionChange }) => {
         
         <div className="flex justify-center space-x-6 mb-12">
           <Link 
-            href="https://github.com/nocturnal625" 
+            href="https://github.com/nocturnal629"
             target="_blank" 
             rel="noopener noreferrer"
             className="text-gray-800 hover:text-teal-800 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
@@ -47,7 +47,7 @@ const Hero: React.FC<HeroProps> = ({ activeSection, onSectionChange }) => {
             <span className="sr-only">Discord</span>
           </Link>
           <Link 
-            href="mailto:contact@nocturnal625.dev" 
+            href="mailto:contact@aldrian-a.dev"
             rel="noopener noreferrer"
             className="text-red-600 hover:text-teal-800 dark:text-red-400 dark:hover:text-teal-400 transition-colors"
           >
