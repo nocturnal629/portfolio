@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { hexToRgb, rgbToHex, getReadableColorOnLight, getReadableColorOnDark, getPageTint, getCardTint, getDarkChipTint } from '@/utils/color';
 
 export default function ColorThemeProvider() {
   const searchParams = useSearchParams();
@@ -9,39 +10,30 @@ export default function ColorThemeProvider() {
 
   useEffect(() => {
     setMounted(true);
-    
+
     function isValidHexColor(color: string): boolean {
       const cleanColor = color.startsWith('#') ? color.slice(1) : color;
       return /^([0-9A-Fa-f]{3}){1,2}$/.test(cleanColor);
     }
 
-    function hexToRgb(hex: string): { r: number, g: number, b: number } {
-      const cleanHex = hex.startsWith('#') ? hex.slice(1) : hex;
-      
-      const fullHex = cleanHex.length === 3 
-        ? cleanHex[0] + cleanHex[0] + cleanHex[1] + cleanHex[1] + cleanHex[2] + cleanHex[2]
-        : cleanHex;
-      
-      const r = parseInt(fullHex.substring(0, 2), 16);
-      const g = parseInt(fullHex.substring(2, 4), 16);
-      const b = parseInt(fullHex.substring(4, 6), 16);
-      
-      return { r, g, b };
-    }
-
     function applyColorTheme(hexColor: string): void {
       const color = hexColor.startsWith('#') ? hexColor : `#${hexColor}`;
-      
+
       const { r, g, b } = hexToRgb(color);
-      
-      const darkerColor = `rgb(${Math.max(0, r-40)}, ${Math.max(0, g-40)}, ${Math.max(0, b-40)})`;
-      const lighterColor = `rgb(${Math.min(255, r+40)}, ${Math.min(255, g+40)}, ${Math.min(255, b+40)})`;
-      
+      const darkerColor = rgbToHex(getReadableColorOnLight(color));
+      const lighterColor = rgbToHex(getReadableColorOnDark(color));
+      const pageTint = rgbToHex(getPageTint(color));
+      const cardTint = rgbToHex(getCardTint(color));
+      const chipBgDark = rgbToHex(getDarkChipTint(color));
+
       document.documentElement.style.setProperty('--theme-color', color);
       document.documentElement.style.setProperty('--theme-color-dark', darkerColor);
       document.documentElement.style.setProperty('--theme-color-light', lighterColor);
       document.documentElement.style.setProperty('--theme-color-rgb', `${r}, ${g}, ${b}`);
-      
+      document.documentElement.style.setProperty('--theme-chip-bg-dark', chipBgDark);
+      document.documentElement.style.setProperty('--theme-page-tint', pageTint);
+      document.documentElement.style.setProperty('--theme-card-tint', cardTint);
+
       document.documentElement.style.setProperty('--color-primary', color);
       document.documentElement.classList.add('has-theme');
     }
@@ -51,6 +43,9 @@ export default function ColorThemeProvider() {
       document.documentElement.style.removeProperty('--theme-color-dark');
       document.documentElement.style.removeProperty('--theme-color-light');
       document.documentElement.style.removeProperty('--theme-color-rgb');
+      document.documentElement.style.removeProperty('--theme-page-tint');
+      document.documentElement.style.removeProperty('--theme-card-tint');
+      document.documentElement.style.removeProperty('--theme-chip-bg-dark');
       document.documentElement.classList.remove('has-theme');
     }
 

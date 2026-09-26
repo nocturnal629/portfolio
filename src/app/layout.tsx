@@ -3,10 +3,8 @@ import './globals.css';
 import { Analytics } from "@vercel/analytics/react";
 import ScrollProgress from '@/components/features/ScrollProgress';
 import FloatingElements from '@/components/features/FloatingElements';
-import KeyboardHint from '@/components/features/KeyboardHint';
 import ThemeProvider from '@/components/features/ThemeProvider';
 import ColorThemeProvider from '@/components/features/ColorThemeProvider';
-import SecretGamingProfiles from '@/components/features/SecretGamingProfiles';
 import ColorPicker from '@/components/features/ColorPicker';
 import { Metadata, Viewport } from 'next';
 
@@ -17,16 +15,16 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Your Name',
-  description: 'Your Job Title',
+  title: 'Your Name - Your Job Title Portfolio',
+  description: 'Your Job Title specializing in [your main technologies]. Building [type of applications] and modern web applications.',
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',
     apple: '/favicon.png',
   },
   openGraph: {
-    title: 'Portfolio',
-    description: 'Your Job Title',
+    title: 'Your Name - Your Job Title Portfolio',
+    description: 'Your Job Title specializing in [your main technologies]. Building [type of applications] and modern web applications.',
     url: 'https://www.yourname.dev',
     siteName: 'Your Name',
     images: [
@@ -34,7 +32,7 @@ export const metadata: Metadata = {
         url: 'https://www.yourname.dev/favicon.png',
         width: 1200,
         height: 630,
-        alt: 'Your Name',
+        alt: 'Your Name - Your Job Title',
         type: 'image/png',
       },
     ],
@@ -43,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Your Name',
-    description: 'Your Job Title',
+    title: 'Your Name - Your Job Title Portfolio',
+    description: 'Your Job Title specializing in [your main technologies]. Building [type of applications] and modern web applications.',
     site: '@yourusername',
     creator: '@yourusername',
     images: ['https://www.yourname.dev/favicon.png'],
@@ -71,8 +69,6 @@ export default function RootLayout({
         
         <ScrollProgress />
         <FloatingElements />
-        <SecretGamingProfiles />
-        <KeyboardHint />
         <Suspense fallback={null}>
           <ColorPicker />
         </Suspense>

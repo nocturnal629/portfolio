@@ -19,13 +19,14 @@ const Projects: React.FC = () => {
               description={project.description}
               tech={project.tech}
               link={project.link}
+              image={project.image}
             />
           ))}
         </div>
         
         <div className="text-center mt-8">
           <Button 
-            href="https://github.com/yourusername?tab=repositories" 
+            href="https://github.com/yourusername?tab=repositories"
             variant="primary"
           >
             View All Projects

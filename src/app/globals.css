@@ -11,7 +11,7 @@ html, body {
 }
 
 :root {
-  --background-light: #f8fafc;
+  --background-light: #cfdceb;
   --foreground-light: #1e293b;
   --background-dark: #0f172a;
   --foreground-dark: #e2e8f0;
@@ -19,6 +19,9 @@ html, body {
   --theme-color: #14b8a6;
   --theme-color-dark: #0f766e;
   --theme-color-light: #5eead4;
+  --theme-page-tint: var(--background-light);
+  --theme-card-tint: #bae6fd;
+  --theme-chip-bg-dark: #134e4a;
 }
 
 body {
@@ -32,8 +35,9 @@ body {
   background-position: -1px -1px;
 }
 
-html.has-theme body {
-  background-image: 
+html.has-theme:not(.dark) body {
+  background-color: var(--theme-page-tint);
+  background-image:
     linear-gradient(rgba(var(--theme-color-rgb, 20, 184, 166), 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(var(--theme-color-rgb, 20, 184, 166), 0.1) 1px, transparent 1px);
 }
@@ -65,18 +69,32 @@ html.has-theme.dark body {
   border-color: var(--theme-color);
 }
 
-html.has-theme .text-teal-400, 
-html.has-theme .text-teal-500, 
+.text-theme-light {
+  color: var(--theme-color-light);
+}
+
+html.has-theme:not(.dark) .to-sky-200 {
+  --tw-gradient-to: var(--theme-card-tint);
+}
+
+html.has-theme .text-teal-400,
+html.has-theme .text-teal-500,
 html.has-theme .text-teal-600,
 html.has-theme .text-teal-700,
 html.has-theme .text-teal-800 {
-  color: var(--theme-color);
+  color: var(--theme-color-dark);
 }
 
-html.has-theme .dark .text-teal-200,
-html.has-theme .dark .text-teal-300,
-html.has-theme .dark .text-teal-400,
-html.has-theme .dark .text-teal-500 {
+/*
+ * Tailwind compiles `dark:*` utilities to `.dark\:foo:is(.dark *)` (the literal class name keeps
+ * its colon), not to `.dark .foo`. The rules below target that literal class name directly, scoped
+ * to `html.has-theme.dark` so they only apply once both dark mode and a custom theme are active.
+ */
+
+html.has-theme.dark .dark\:text-teal-200,
+html.has-theme.dark .dark\:text-teal-300,
+html.has-theme.dark .dark\:text-teal-400,
+html.has-theme.dark .dark\:text-teal-500 {
   color: var(--theme-color-light);
 }
 
@@ -85,21 +103,27 @@ html.has-theme .bg-teal-100 {
   background-color: rgba(var(--theme-color-rgb, 20, 184, 166), 0.1);
 }
 
-html.has-theme .bg-teal-500, 
+html.has-theme .bg-teal-500,
 html.has-theme .bg-teal-600,
 html.has-theme .bg-teal-700 {
-  background-color: var(--theme-color);
+  background-color: var(--theme-color-dark);
 }
 
-html.has-theme .dark .bg-teal-400,
-html.has-theme .dark .bg-teal-500,
-html.has-theme .dark .bg-teal-600 {
+/* Decorative fill with no text on top (e.g. the scroll progress bar) — safe to use the bright variant. */
+html.has-theme.dark .dark\:bg-teal-400 {
   background-color: var(--theme-color-light);
 }
 
-html.has-theme .dark .bg-teal-800,
-html.has-theme .dark .bg-teal-900 {
+/* Solid button fills with white text on top — must stay dark enough for white text, same as their light-mode equivalents. */
+html.has-theme.dark .dark\:bg-teal-500,
+html.has-theme.dark .dark\:bg-teal-600 {
   background-color: var(--theme-color-dark);
+}
+
+/* Badge/chip fills — a fixed dark tint, not `--theme-color-dark` (that's tuned for light backgrounds and can end up too bright to hold badge text). */
+html.has-theme.dark .dark\:bg-teal-800,
+html.has-theme.dark .dark\:bg-teal-900 {
+  background-color: var(--theme-chip-bg-dark);
 }
 
 html.has-theme .hover\:bg-teal-50:hover {
@@ -115,13 +139,16 @@ html.has-theme .hover\:bg-teal-700:hover {
   background-color: var(--theme-color-dark);
 }
 
-html.has-theme .dark .hover\:bg-teal-500:hover,
-html.has-theme .dark .hover\:bg-teal-600:hover {
+html.has-theme.dark .dark\:hover\:bg-teal-500:hover {
   background-color: var(--theme-color-light);
 }
 
-html.has-theme .dark .hover\:bg-teal-900:hover,
-html.has-theme .dark .hover\:bg-teal-900\/30:hover {
+html.has-theme.dark .dark\:hover\:bg-teal-600:hover {
+  background-color: var(--theme-color-dark);
+}
+
+html.has-theme.dark .dark\:hover\:bg-teal-900:hover,
+html.has-theme.dark .dark\:hover\:bg-teal-900\/30:hover {
   background-color: color-mix(in srgb, var(--theme-color-dark) 30%, transparent);
 }
 
@@ -130,8 +157,8 @@ html.has-theme .hover\:text-teal-600:hover {
   color: var(--theme-color-dark);
 }
 
-html.has-theme .dark .hover\:text-teal-300:hover,
-html.has-theme .dark .hover\:text-teal-400:hover {
+html.has-theme.dark .dark\:hover\:text-teal-300:hover,
+html.has-theme.dark .dark\:hover\:text-teal-400:hover {
   color: var(--theme-color-light);
 }
 
@@ -142,13 +169,13 @@ html.has-theme .border-teal-600 {
   border-color: var(--theme-color);
 }
 
-html.has-theme .dark .border-teal-400,
-html.has-theme .dark .border-teal-500 {
+html.has-theme.dark .dark\:border-teal-400,
+html.has-theme.dark .dark\:border-teal-500 {
   border-color: var(--theme-color-light);
 }
 
-html.has-theme .dark .border-teal-700,
-html.has-theme .dark .border-teal-800 {
+html.has-theme.dark .dark\:border-teal-700,
+html.has-theme.dark .dark\:border-teal-800 {
   border-color: var(--theme-color-dark);
 }
 
@@ -158,8 +185,8 @@ html.has-theme .hover\:border-teal-500:hover {
   border-color: var(--theme-color-light);
 }
 
-html.has-theme .dark .hover\:border-teal-700:hover,
-html.has-theme .dark .hover\:border-teal-800:hover {
+html.has-theme.dark .dark\:hover\:border-teal-700:hover,
+html.has-theme.dark .dark\:hover\:border-teal-800:hover {
   border-color: var(--theme-color-dark);
 }
 

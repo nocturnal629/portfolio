@@ -6,6 +6,7 @@ export const projects: Project[] = [
     description: "Brief description of your project. Explain what it does, what problem it solves, and any key features or technologies used.",
     tech: ["Technology 1", "Technology 2", "Technology 3", "Technology 4"],
     link: "https://github.com/yourusername/project-name-1"
+    // image: "/projects/project-name-1.png" — optional preview screenshot
   },
   {
     title: "Project Name 2",

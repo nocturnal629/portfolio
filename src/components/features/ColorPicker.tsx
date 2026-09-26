@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { hexToRgb, rgbToHex, getReadableColorOnLight, getReadableColorOnDark, getPageTint, getCardTint, getDarkChipTint } from '@/utils/color';
 
 const ColorPicker: React.FC = () => {
   const searchParams = useSearchParams();
@@ -69,6 +70,9 @@ const ColorPicker: React.FC = () => {
       document.documentElement.style.removeProperty('--theme-color-dark');
       document.documentElement.style.removeProperty('--theme-color-light');
       document.documentElement.style.removeProperty('--theme-color-rgb');
+      document.documentElement.style.removeProperty('--theme-page-tint');
+      document.documentElement.style.removeProperty('--theme-card-tint');
+      document.documentElement.style.removeProperty('--theme-chip-bg-dark');
     } else {
       applyColorToDOM(color);
     }
@@ -80,22 +84,20 @@ const ColorPicker: React.FC = () => {
   const applyColorToDOM = (hexColor: string) => {
     const color = hexColor.startsWith('#') ? hexColor : `#${hexColor}`;
 
-    const hex = color.replace('#', '');
-    const fullHex = hex.length === 3 
-      ? hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2]
-      : hex;
-    
-    const r = parseInt(fullHex.substring(0, 2), 16);
-    const g = parseInt(fullHex.substring(2, 4), 16);
-    const b = parseInt(fullHex.substring(4, 6), 16);
-
-    const darkerColor = `rgb(${Math.max(0, r-40)}, ${Math.max(0, g-40)}, ${Math.max(0, b-40)})`;
-    const lighterColor = `rgb(${Math.min(255, r+40)}, ${Math.min(255, g+40)}, ${Math.min(255, b+40)})`;
+    const { r, g, b } = hexToRgb(color);
+    const darkerColor = rgbToHex(getReadableColorOnLight(color));
+    const lighterColor = rgbToHex(getReadableColorOnDark(color));
+    const pageTint = rgbToHex(getPageTint(color));
+    const cardTint = rgbToHex(getCardTint(color));
+    const chipBgDark = rgbToHex(getDarkChipTint(color));
 
     document.documentElement.style.setProperty('--theme-color', color);
     document.documentElement.style.setProperty('--theme-color-dark', darkerColor);
     document.documentElement.style.setProperty('--theme-color-light', lighterColor);
     document.documentElement.style.setProperty('--theme-color-rgb', `${r}, ${g}, ${b}`);
+    document.documentElement.style.setProperty('--theme-chip-bg-dark', chipBgDark);
+    document.documentElement.style.setProperty('--theme-page-tint', pageTint);
+    document.documentElement.style.setProperty('--theme-card-tint', cardTint);
     document.documentElement.classList.add('has-theme');
   };
 
@@ -118,7 +120,7 @@ const ColorPicker: React.FC = () => {
         </button>
         
         {isOpen && (
-          <div className="absolute bottom-11 left-0 bg-white dark:bg-slate-800 p-4 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 w-56">
+          <div className="absolute bottom-11 left-0 bg-gradient-to-br from-white to-sky-200 dark:from-slate-800 dark:to-slate-800 p-4 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 w-56">
             <div className="text-sm font-medium mb-2 text-gray-800 dark:text-gray-200">Theme Colors</div>
             <div className="grid grid-cols-4 gap-2">
               {colorOptions.map((color) => (
@@ -138,7 +140,7 @@ const ColorPicker: React.FC = () => {
             </div>
             
             <div className="mt-3">
-              <label className="text-xs text-gray-600 dark:text-gray-400">Custom Color:</label>
+              <label className="text-xs text-gray-800 dark:text-gray-400">Custom Color:</label>
               <div className="flex mt-1">
                 <input
                   type="color"

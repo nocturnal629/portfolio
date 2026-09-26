@@ -1,6 +1,6 @@
 # Portfolio Template
 
-A modern, responsive portfolio website template built with Next.js and TypeScript. This template allows you to easily create your own portfolio website to showcase your personal projects, work experience, skills, and provide an interactive way for visitors to learn more about you.
+A modern, responsive portfolio website template built with Next.js and TypeScript. This template allows you to easily create your own portfolio website to showcase your personal projects, work experience, certifications, and skills, and provide an interactive way for visitors to learn more about you.
 
 **[🌐 Template Demo](https://yourname.dev/)**
 
@@ -8,15 +8,18 @@ A modern, responsive portfolio website template built with Next.js and TypeScrip
 
 - **Responsive Design**: Fully responsive layout that works on all devices
 - **Dark/Light Theme**: Toggle between dark and light modes with system preference detection
-- **Project Showcase**: Display of personal projects with descriptions and tech stacks
-- **Experience Timeline**: Professional work history and experience
+- **Accent Color Picker**: Visitors can customize the site's accent color via a `?color=RRGGBB` URL param
+- **Sticky Navbar**: Slide-in navigation bar that appears once the visitor scrolls past the hero
+- **Interactive Hero Title**: Canvas-based particle effect that reacts to mouse movement and clicks
+- **Project Showcase**: Display of personal projects with descriptions, tech stacks, and optional preview images
+- **Experience Timeline**: Professional work history, supporting either a flat list of responsibilities or multiple roles per company
+- **Certifications**: Grid of certifications/badges with optional logos and links
 - **About Section**: Personal introduction and skills overview
-- **Gaming Profiles**: Secret section for gaming achievements (Easter egg)
 - **Analytics**: Integrated Vercel Analytics for visitor tracking
 
 ## 🛠️ Tech Stack
 
-- **Framework**: [Next.js 15](https://nextjs.org/) with App Router
+- **Framework**: [Next.js 16](https://nextjs.org/) with App Router
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **Icons**: [React Icons](https://react-icons.github.io/react-icons/) & [React Feather](https://feathericons.com/)
@@ -28,7 +31,7 @@ A modern, responsive portfolio website template built with Next.js and TypeScrip
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm, yarn, or pnpm
 
 ### Installation
@@ -65,21 +68,23 @@ A modern, responsive portfolio website template built with Next.js and TypeScrip
 ```
 portfolio/
 ├── public/
-│   └── images/          # Static images and favicon
+│   ├── favicon.png      # Site favicon
+│   ├── logos/            # Company/certification logos (add your own)
+│   └── projects/         # Project preview images (add your own)
 ├── src/
-│   ├── app/            # Next.js app directory
-│   │   ├── globals.css # Global styles
-│   │   ├── layout.tsx  # Root layout
-│   │   └── page.tsx    # Home page
+│   ├── app/              # Next.js app directory
+│   │   ├── globals.css   # Global styles
+│   │   ├── layout.tsx    # Root layout + metadata
+│   │   └── page.tsx      # Home page
 │   ├── components/
-│   │   ├── features/   # Feature components (theme, color picker, etc.)
-│   │   ├── sections/   # Page sections (Hero, About, Projects, etc.)
-│   │   └── ui/         # Reusable UI components
-│   ├── data/          # Static data (projects, experience, skills)
-│   └── types/         # TypeScript type definitions
-├── tailwind.config.js # Tailwind configuration
-├── tsconfig.json     # TypeScript configuration
-└── package.json      # Dependencies and scripts
+│   │   ├── features/     # Feature components (theme, navbar, color picker, etc.)
+│   │   ├── sections/     # Page sections (Hero, Projects, Experience, Certifications, About, Footer)
+│   │   └── ui/            # Reusable UI components
+│   ├── data/              # Static data (projects, experience, certifications, skills, navigation)
+│   └── types/              # TypeScript type definitions
+├── tailwind.config.js       # Tailwind configuration
+├── tsconfig.json            # TypeScript configuration
+└── package.json             # Dependencies and scripts
 ```
 
 ## 🎨 Customization
@@ -87,41 +92,41 @@ portfolio/
 ### Personal Information
 
 1. **Update data files** in `src/data/`:
-   - `projects.ts` - Replace placeholder projects with your actual projects and repositories
-   - `experience.ts` - Replace placeholder experience with your work history and professional experience
-   - `skills.ts` - Update skills to match your technical proficiencies
+   - `projects.ts` — Replace placeholder projects with your actual projects and repositories
+   - `experience.ts` — Replace placeholder experience with your work history. Each entry supports either a flat `responsibilities` list or multiple `roles` (useful for promotions at the same company)
+   - `certifications.ts` — Add your certifications/badges; `logo` and `link` are optional
+   - `skills.ts` — Update skills to match your technical proficiencies
+   - `navigation.ts` — Update the section links shown in the hero nav and sticky navbar
 
-2. **Modify section content** in `src/components/sections/`:
-   - `Hero.tsx` - Update your name, job title, location, and social media links
-   - `About.tsx` - Replace placeholder text with your personal introduction and bio
-   - `Projects.tsx` - The project showcase will automatically use your data from `projects.ts`
-   - `Experience.tsx` - The experience timeline will automatically use your data from `experience.ts`
+2. **Modify section content** in `src/components/`:
+   - `features/HeroTitle.tsx` — Change `DISPLAY_NAME` to your name
+   - `features/Navbar.tsx` — Update the brand text shown in the sticky navbar
+   - `sections/Hero.tsx` — Update your job title, location, and social media links
+   - `sections/About.tsx` — Replace placeholder text with your personal introduction and bio
+   - `sections/Footer.tsx` — Update the copyright name
 
 3. **Update metadata** in `src/app/layout.tsx`:
-   - Change title, description, and Open Graph data
+   - Change title, description, and Open Graph/Twitter data
    - Update social media handles and website URL
 
 4. **Update images**:
-   - Replace favicon in `public/favicon.png`
-   - Add profile pictures or project screenshots as needed
+   - Replace the favicon in `public/favicon.png`
+   - Add company/certification logos to `public/logos/` and reference them from `experience.ts`/`certifications.ts`
+   - Add project preview images to `public/projects/` and reference them from `projects.ts`
 
 5. **Customize styling**:
    - Modify colors in `tailwind.config.js`
    - Update global styles in `src/app/globals.css`
    - Customize component styles using Tailwind classes
 
-6. **Optional: Gaming Profiles** in `src/components/features/SecretGamingProfiles.tsx`:
-   - Replace placeholder gaming usernames with your actual gaming profiles
-   - Update the trigger keyword from "yourname" to your preferred keyword
-
 ### Theme Colors
 
-The site includes a color picker feature that allows users to customize the theme. You can modify the default colors in the `ColorPicker` component.
+The site includes a color picker feature that allows visitors to customize the accent color via a `?color=RRGGBB` URL param. You can modify the default colors in the `ColorPicker` component.
 
 ## 📱 Responsive Breakpoints
 
 - **Mobile**: 320px - 768px
-- **Tablet**: 768px - 1024px  
+- **Tablet**: 768px - 1024px
 - **Desktop**: 1024px+
 
 ## 🔧 Available Scripts
@@ -156,7 +161,7 @@ If you want to use a custom domain:
 1. Purchase a domain from [Porkbun](https://porkbun.com/), [Namecheap](https://www.namecheap.com/), or any domain registrar
 2. Configure DNS settings to point to your hosting provider
 3. Add the domain in your hosting platform's dashboard
-4. Update the domain references in `src/app/layout.tsx` metadata
+4. Update the domain references in `src/app/layout.tsx`
 
 ## 📄 License
 
