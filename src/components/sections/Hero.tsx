@@ -28,9 +28,9 @@ const Hero: React.FC<HeroProps> = ({ activeSection, onSectionChange }) => {
             <FaGithub className="h-8 w-8" suppressHydrationWarning />
             <span className="sr-only">GitHub</span>
           </Link>
-          <Link 
-            href="" 
-            target="_blank" 
+          <Link
+            href="https://www.linkedin.com/in/aldrian-a-098558246/"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 hover:text-teal-800 dark:text-blue-400 dark:hover:text-teal-400 transition-colors"
           >
